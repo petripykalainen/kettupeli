@@ -8,8 +8,13 @@ public class Health : MonoBehaviour
 
     public const int maxHealth = 100;
     public int currentHealth = maxHealth;
-    public RectTransform healthBar;
+    public RectTransform healthBar; // Source must be Foreground
+    public Text hitPoints;
 
+    void Start()
+    {
+        SetHitPoints();
+    }
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
@@ -20,5 +25,22 @@ public class Health : MonoBehaviour
         }
 
         healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("DamageSource"))
+        {
+
+            var health = GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(10);
+            }
+            SetHitPoints();
+        }
+    }
+    void SetHitPoints()
+    {
+        hitPoints.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 }
