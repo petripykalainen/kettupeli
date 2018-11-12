@@ -21,7 +21,9 @@ public class EnemyArea : MonoBehaviour
 
     IEnumerator StopChase()
     {
-        yield return new WaitForSeconds(2);
+        float wait = Random.Range(0.1f, 2f);
+        Debug.Log(wait);
+        yield return new WaitForSeconds(wait);
         enemy.SetTarget(null);
     }
 
