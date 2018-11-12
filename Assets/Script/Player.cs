@@ -69,4 +69,12 @@ public class Player : MonoBehaviour {
             rb.velocity += jumpUp * Time.deltaTime;
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
