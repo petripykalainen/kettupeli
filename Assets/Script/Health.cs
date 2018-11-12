@@ -10,10 +10,12 @@ public class Health : MonoBehaviour
     public int currentHealth = maxHealth;
     public RectTransform healthBar; // Source must be Foreground
     public Text hitPoints;
+    public Text deathMessage;
 
     void Start()
     {
         SetHitPoints();
+        deathMessage.text = "";
     }
     public void TakeDamage(int amount)
     {
@@ -42,5 +44,9 @@ public class Health : MonoBehaviour
     void SetHitPoints()
     {
         hitPoints.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        if (currentHealth <= 0)
+        {
+            deathMessage.text = "You have died!";
+        }
     }
 }
