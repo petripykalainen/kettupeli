@@ -8,12 +8,31 @@ public class Health : MonoBehaviour
 
     public const int maxHealth = 100;
     public int currentHealth = maxHealth;
-    public RectTransform healthBar; // Source must be Foreground
-    public Text hitPoints;
-    public Text deathMessage;
+    [SerializeField] RectTransform healthBar; // Source must be Foreground
+    [SerializeField] Text hitPoints;
+    [SerializeField] Text deathMessage;
 
     void Start()
     {
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+        healthBar = GameObject.Find("Healthbar Canvas/Background/Foreground").GetComponent<RectTransform>();
+        hitPoints = GameObject.Find("Healthbar Canvas/Background/Hitpoints").GetComponent<Text>();
+        deathMessage = GameObject.Find("Healthbar Canvas/Death Text").GetComponent<Text>();
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+        //healthBar = GameObject.Find("Healthbar Canvas/Background/Foreground").GetComponent<RectTransform>();
+        //hitPoints = GameObject.Find("Healthbar Canvas/Background/Hitpoints").GetComponent<Text>();
+        //deathMessage = GameObject.Find("Healthbar Canvas/Death Text").GetComponent<Text>();
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+>>>>>>> petri
+=======
+>>>>>>> Stashed changes
         SetHitPoints();
         deathMessage.text = "";
     }
