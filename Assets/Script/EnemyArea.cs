@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyArea : MonoBehaviour
 {
     [SerializeField] GameObject guard;
+    bool occupied = false;
     Enemy enemy;
 
     // Use this for initialization
@@ -14,17 +15,18 @@ public class EnemyArea : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     IEnumerator StopChase()
     {
-        float wait = Random.Range(0.1f, 2f);
-        Debug.Log(wait);
+        float wait = Random.Range(0.6f, 2f);
+
         yield return new WaitForSeconds(wait);
-        enemy.SetTarget(null);
+
+        if (!occupied)
+        {
+            enemy.SetTarget(null);
+            Debug.Log("Chase Target reset");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,15 +34,15 @@ public class EnemyArea : MonoBehaviour
         if (other.tag == "Player")
         {
             enemy.SetTarget(other.transform);
-
+            occupied = true;
         }
-
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
+            occupied = false;
             StartCoroutine(StopChase());
         }
     }

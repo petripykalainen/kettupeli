@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
     Player player;
     Rigidbody rb;
+    Animator weapon;
     public float movementSpeed = 3.0f;
     public float jumpSpeed = 10.0f;
 
@@ -14,16 +15,18 @@ public class Player : MonoBehaviour {
 	void Start ()
     {
         player = FindObjectOfType<Player>();
-        Debug.Log("Playe???  " + player);
+        //Debug.Log("Playe???  " + player);
+        weapon = FindObjectOfType<MeleeWeapon>().GetComponent<Animator>();
+        Debug.Log(weapon.name);
         rb = GetComponentInChildren<Rigidbody>();
-        Debug.Log(rb);
+        //Debug.Log(rb);
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         Move();
-        Jump();
+        Attack();
 
         /*
         Vector3 forward = transform.TransformDirection	(Vector3.forward) * 10;
@@ -60,13 +63,11 @@ public class Player : MonoBehaviour {
         }
     }
 
-    private void Jump()
+    private void Attack()
     {
-        if(Input.GetKey("space"))
+        if(Input.GetKeyUp("space"))
         {
-            Debug.Log("Hyppy");
-            Vector3 jumpUp = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
-            rb.velocity += jumpUp * Time.deltaTime;
+            weapon.SetTrigger("Attack");
         }
     }
 }

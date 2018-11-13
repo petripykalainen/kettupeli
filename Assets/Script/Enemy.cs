@@ -46,14 +46,17 @@ public class Enemy : MonoBehaviour {
 
     public void PatrolWaypoints()
     {
-        Vector3 targetPosition = path[pathIndex].transform.position;
-        Vector3 currentPosition = transform.position;
-        float movement = moveSpeed * Time.deltaTime;
-
-        transform.position = Vector3.MoveTowards(currentPosition, targetPosition, movement);
-        if (currentPosition == targetPosition)
+        if (path.Count > 0)
         {
-            pathIndex++;
+            Vector3 targetPosition = path[pathIndex].transform.position;
+            Vector3 currentPosition = transform.position;
+            float movement = moveSpeed * Time.deltaTime;
+
+            transform.position = Vector3.MoveTowards(currentPosition, targetPosition, movement);
+            if (currentPosition == targetPosition)
+            {
+                pathIndex++;
+            }
         }
     }
 
