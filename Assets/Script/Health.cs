@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
         SetHitPoints();
         deathMessage.text = "";
     }
+
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
@@ -33,7 +34,9 @@ public class Health : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("DamageSource"))
+        //Debug.Log(other.name);
+
+        if (other.gameObject.CompareTag("Enemy"))
         {
 
             var health = GetComponent<Health>();
