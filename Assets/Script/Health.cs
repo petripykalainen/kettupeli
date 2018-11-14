@@ -15,17 +15,9 @@ public class Health : MonoBehaviour
     void Start()
     {
 
-        healthBar = GameObject.Find("Healthbar Canvas/Background/Foreground").GetComponent<RectTransform>();
-        hitPoints = GameObject.Find("Healthbar Canvas/Background/Hitpoints").GetComponent<Text>();
-        deathMessage = GameObject.Find("Healthbar Canvas/Death Text").GetComponent<Text>();
-
-        //healthBar = GameObject.Find("Healthbar Canvas/Background/Foreground").GetComponent<RectTransform>();
-        //hitPoints = GameObject.Find("Healthbar Canvas/Background/Hitpoints").GetComponent<Text>();
-        //deathMessage = GameObject.Find("Healthbar Canvas/Death Text").GetComponent<Text>();
-
-        healthBar = GameObject.Find("Healthbar Canvas/Background/Foreground").GetComponent<RectTransform>();
-        hitPoints = GameObject.Find("Healthbar Canvas/Background/Hitpoints").GetComponent<Text>();
-        deathMessage = GameObject.Find("Healthbar Canvas/Death Text").GetComponent<Text>();
+        healthBar = GameObject.Find("Player/Healthbar Canvas/Health Background/Healthbar").GetComponent<RectTransform>();
+        hitPoints = GameObject.Find("Player/Healthbar Canvas/Health Background/Hitpoints").GetComponent<Text>();
+        deathMessage = GameObject.Find("Player/Healthbar Canvas/Death Text").GetComponent<Text>();
         SetHitPoints();
         deathMessage.text = "";
     }
