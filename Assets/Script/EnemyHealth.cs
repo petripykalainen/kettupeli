@@ -6,12 +6,12 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     public bool isDead;
 
-    CapsuleCollider capsuleCollider;
+    // CapsuleCollider capsuleCollider;
 
 
     void Start()
     {
-        capsuleCollider = GetComponent<CapsuleCollider>();
+        // capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealth = startingHealth;
     }
 

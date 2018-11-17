@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public int attackDamage = 10;
 
     GameObject enemy;
+	GameObject player;
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
 
@@ -18,7 +19,8 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy");
-        playerHealth = GetComponent<PlayerHealth>();
+		player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = enemy.GetComponent<EnemyHealth>();
 
     }
