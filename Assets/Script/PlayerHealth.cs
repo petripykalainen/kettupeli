@@ -39,7 +39,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        // FIXME: Slider for some reason doesn't go to zero.
         damaged = true;
         currentHealth -= amount;
         healthSlider.value = currentHealth;
