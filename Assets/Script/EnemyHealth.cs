@@ -38,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
         // TODO: Death animation, or at least stop the enemy from chasing the player.
         isDead = true;
         Debug.Log("You have slaughtered the enemy!");
+        Destroy(gameObject);
         // capsuleCollider.isTrigger = true;    
     }
 }

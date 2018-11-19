@@ -7,10 +7,10 @@ public class PlayerAttack : MonoBehaviour
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
 
-    GameObject enemy;
+    public GameObject enemy;
 	GameObject player;
     PlayerHealth playerHealth;
-    EnemyHealth enemyHealth;
+    public EnemyHealth enemyHealth;
 
     bool enemyInRange;
     float timer;
@@ -18,28 +18,31 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
 		player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
-        enemyHealth = enemy.GetComponent<EnemyHealth>();
-
     }
 
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == enemy)
+        if (other.gameObject.tag == "Enemy")
         {
+            Debug.Log(other + " Entered Player.");
             enemyInRange = true;
+            enemy = other.gameObject;
+            enemyHealth = enemy.GetComponent<EnemyHealth>();
+            Debug.Log(enemyHealth + " : " + enemy);
         }
     }
-
-
+  
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == enemy)
+        if (other.gameObject.tag == "Enemy")
         {
             enemyInRange = false;
+            enemy = null;
+            enemyHealth = null;
+            Debug.Log(enemyHealth + " : " + enemy);
         }
     }
 
@@ -48,20 +51,24 @@ public class PlayerAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= timeBetweenAttacks && enemyInRange && enemyHealth.currentHealth > 0)
+        if (timer >= timeBetweenAttacks && Input.GetKey(KeyCode.Alpha1))
         {
             Attack();
         }
+
     }
 
 
     void Attack()
     {
         timer = 0f;
-
-        if (enemyHealth.currentHealth > 0 && !playerHealth.isDead)
+        if (enemyHealth)
         {
             enemyHealth.TakeDamage(attackDamage);
+        }
+        else
+        {
+            Debug.Log("There is no enemy");
         }
     }
 }
