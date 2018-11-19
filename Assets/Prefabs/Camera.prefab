@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4335624462726408}
   - component: {fileID: 20105754544521630}
   - component: {fileID: 81501351890802114}
-  - component: {fileID: 114925283253104514}
+  - component: {fileID: 114624185882820892}
   m_Layer: 0
   m_Name: MinimapCamera
   m_TagString: Untagged
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297306920529044}
   m_LocalRotation: {x: 0.6532815, y: 0.27059805, z: -0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4973517870871588}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0f6ef53acbd0941b20df773aec1cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114925283253104514
+--- !u!114 &114624185882820892
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1297306920529044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c0f6ef53acbd0941b20df773aec1cfa, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bccb62d50a97b141bc0fc40e8cabddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
