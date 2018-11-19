@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    [SerializeField] List<Transform> path;
     [SerializeField] float moveSpeed = 1f;
     public Transform chaseTarget;
 
     public Vector3 startingPosition;
     public bool playerInSight = false;
-
-    int pathIndex = 0;
 
 	// Use this for initialization
 	void Start ()
@@ -29,21 +26,12 @@ public class Enemy : MonoBehaviour {
     {
         if (chaseTarget)
         {
+            Debug.Log("Chasing");
             Chase(chaseTarget);
-        }
-        else
-        {
-            if (pathIndex <= path.Count - 1)
-            {
-                PatrolWaypoints();
-            }
-            else
-            {
-                ReturnToStart();
-            }
         }
 	}
 
+    /*
     public void PatrolWaypoints()
     {
         if (path.Count > 0)
@@ -59,7 +47,8 @@ public class Enemy : MonoBehaviour {
             }
         }
     }
-
+    */
+    /*
     public void ReturnToStart()
     { 
         
@@ -75,6 +64,7 @@ public class Enemy : MonoBehaviour {
             pathIndex = 0;
         }
     }
+    */
 
     public void Chase(Transform target)
     {

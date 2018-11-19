@@ -176,6 +176,8 @@ GameObject:
   - component: {fileID: 136758046301795384}
   - component: {fileID: 114986210742935976}
   - component: {fileID: 114001617192260898}
+  - component: {fileID: 135215605982619658}
+  - component: {fileID: 114951844197937982}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -449,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -591,6 +593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
   attackDamage: 20
+  enemy: {fileID: 0}
+  enemyHealth: {fileID: 0}
 --- !u!114 &114822577582277576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -666,6 +670,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114951844197937982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867223331877488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8335dd108320884db8dd7fddd03b298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
+  enemy: {fileID: 0}
+  enemyHealth: {fileID: 0}
 --- !u!114 &114985395682801848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -701,6 +720,18 @@ MonoBehaviour:
   movementSpeed: 4
   jumpSpeed: 50
   camera: {fileID: 0}
+--- !u!135 &135215605982619658
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867223331877488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 1.08, z: 0}
 --- !u!136 &136758046301795384
 CapsuleCollider:
   m_ObjectHideFlags: 1

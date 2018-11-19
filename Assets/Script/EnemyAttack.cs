@@ -28,7 +28,29 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            playerInRange = true;
+            RaycastHit hit;
+            Vector3 direction = other.transform.position - transform.position;
+            LayerMask mask = LayerMask.GetMask("Player");
+
+            if (Physics.Raycast(transform.position, direction, out hit, 5f, mask))
+            {
+                playerInRange = true;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            RaycastHit hit;
+            Vector3 direction = other.transform.position - transform.position;
+            LayerMask mask = LayerMask.GetMask("Player");
+
+            if (Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity, mask))
+            {
+                Debug.DrawRay(transform.position, direction, Color.yellow, 2f);
+            }
         }
     }
 
@@ -50,6 +72,7 @@ public class EnemyAttack : MonoBehaviour
         {
             Attack();
         }
+
     }
 
 

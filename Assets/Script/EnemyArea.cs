@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class EnemyArea : MonoBehaviour
 {
-    [SerializeField] GameObject guard;
     bool occupied = false;
+    GameObject enemyObject;
     Enemy enemy;
 
     // Use this for initialization
     void Start()
     {
-        enemy = guard.GetComponent<Enemy>();
+        enemyObject = transform.parent.gameObject;
+        enemy = enemyObject.GetComponent<Enemy>();
     }
 
     // Update is called once per frame
