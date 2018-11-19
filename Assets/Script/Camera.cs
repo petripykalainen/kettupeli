@@ -24,7 +24,10 @@ public class Camera : MonoBehaviour {
 
     private void LateUpdate()
     {
-        UpdateCameraPosition();
+        if (player)
+        {
+            UpdateCameraPosition();
+        }
     }
 
     public void UpdateCameraPosition()

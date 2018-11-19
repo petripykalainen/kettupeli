@@ -49,7 +49,7 @@ public class EnemyAttack : MonoBehaviour
 
             if (Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity, mask))
             {
-                Debug.DrawRay(transform.position, direction, Color.yellow, 2f);
+                Debug.DrawRay(transform.position, direction, Color.yellow, 0.5f);
             }
         }
     }

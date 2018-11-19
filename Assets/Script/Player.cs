@@ -6,7 +6,6 @@ public class Player : MonoBehaviour {
 
     Player player;
     Rigidbody rb;
-    Animator weapon;
     public float movementSpeed = 3.0f;
     public float jumpSpeed = 10.0f;
     Vector3 forward, right;
@@ -18,7 +17,6 @@ public class Player : MonoBehaviour {
     {
         player = FindObjectOfType<Player>();
         //Debug.Log("Playe???  " + player);
-        weapon = FindObjectOfType<MeleeWeapon>().GetComponent<Animator>();
         //Debug.Log(weapon.name);
         //rb = GetComponentInChildren<Rigidbody>();
         //Debug.Log(rb);
@@ -89,9 +87,6 @@ public class Player : MonoBehaviour {
 
     private void Attack()
     {
-        if(Input.GetKeyUp("space"))
-        {
-            weapon.SetTrigger("Attack");
-        }
+
     }
 }

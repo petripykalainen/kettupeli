@@ -18,6 +18,9 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        healthSlider = GameObject.Find("HealthSlider").GetComponent<Slider>();
+        damageImage = GameObject.Find("DamageImage").GetComponent<Image>();
+        deathMessage = GameObject.Find("DeathMessage").GetComponent<Text>();
         currentHealth = startingHealth;
         deathMessage.text = "";
     }
@@ -53,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
+        Destroy(gameObject);
         deathMessage.text = "You have died!";
     }
 }
