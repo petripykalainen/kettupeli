@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     Rigidbody rb;
-    Animator weapon;
     public float movementSpeed = 3.0f;
     public float jumpSpeed = 10.0f;
     Vector3 forward, right;
@@ -16,7 +15,6 @@ public class Player : MonoBehaviour {
 	void Start ()
     {
         //Debug.Log("Playe???  " + player);
-        weapon = FindObjectOfType<MeleeWeapon>().GetComponent<Animator>();
         //Debug.Log(weapon.name);
         //rb = GetComponentInChildren<Rigidbody>();
         //Debug.Log(rb);
@@ -37,7 +35,6 @@ public class Player : MonoBehaviour {
         {
             Move();
         }
-        Attack();
 
         /*
         Vector3 forward = transform.TransformDirection	(Vector3.forward) * 10;
@@ -86,13 +83,5 @@ public class Player : MonoBehaviour {
         }
         transform.position += sideMovement;
         transform.position += upMovement;
-    }
-
-    private void Attack()
-    {
-        if(Input.GetKeyUp("space"))
-        {
-            weapon.SetTrigger("Attack");
-        }
     }
 }
