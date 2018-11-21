@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    Player player;
     Rigidbody rb;
     Animator weapon;
     public float movementSpeed = 3.0f;
@@ -16,13 +15,12 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        player = FindObjectOfType<Player>();
         //Debug.Log("Playe???  " + player);
         weapon = FindObjectOfType<MeleeWeapon>().GetComponent<Animator>();
         //Debug.Log(weapon.name);
         //rb = GetComponentInChildren<Rigidbody>();
         //Debug.Log(rb);
-        camera = GameObject.Find("Main Camera").transform;
+        camera = GameObject.Find("PlayerCamera").transform;
         forward = camera.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
@@ -77,12 +75,15 @@ public class Player : MonoBehaviour {
         }
         */
 
-        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        //Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         Vector3 sideMovement = right * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
         Vector3 upMovement = forward * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
         Vector3 heading = Vector3.Normalize(sideMovement + upMovement);
 
-        transform.forward = heading;
+        if (heading != Vector3.zero)
+        {
+            transform.forward = heading;
+        }
         transform.position += sideMovement;
         transform.position += upMovement;
     }
