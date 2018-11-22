@@ -5,8 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     Rigidbody rb;
-    public float movementSpeed = 3.0f;
-    public float jumpSpeed = 10.0f;
+    [SerializeField] float movementSpeed = 1.0f;
     Vector3 forward, right;
     public Transform camera;
 
@@ -16,7 +15,7 @@ public class Player : MonoBehaviour {
     {
         //Debug.Log("Playe???  " + player);
         //Debug.Log(weapon.name);
-        //rb = GetComponentInChildren<Rigidbody>();
+        rb = GetComponentInChildren<Rigidbody>();
         //Debug.Log(rb);
         camera = GameObject.Find("PlayerCamera").transform;
         forward = camera.transform.forward;
@@ -29,7 +28,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
         if (Input.anyKey)
         {
@@ -76,12 +75,14 @@ public class Player : MonoBehaviour {
         Vector3 sideMovement = right * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
         Vector3 upMovement = forward * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
         Vector3 heading = Vector3.Normalize(sideMovement + upMovement);
-
+        Vector3 movement = sideMovement.normalized + upMovement.normalized;
         if (heading != Vector3.zero)
         {
             transform.forward = heading;
         }
-        transform.position += sideMovement;
-        transform.position += upMovement;
+
+        rb.MovePosition(rb.transform.position + movement * movementSpeed * Time.deltaTime);
+        //transform.position += sideMovement;
+        //transform.position += upMovement;
     }
 }
