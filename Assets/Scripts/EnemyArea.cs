@@ -24,7 +24,6 @@ public class EnemyArea : MonoBehaviour
 
         if (!occupied)
         {
-            enemy.SetTarget(null);
             Debug.Log("Chase Target reset");
         }
     }
@@ -33,7 +32,6 @@ public class EnemyArea : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            enemy.SetTarget(other.transform);
             occupied = true;
         }
     }
