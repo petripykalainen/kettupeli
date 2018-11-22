@@ -10,6 +10,7 @@ public class MinimapCamera : MonoBehaviour
 
     void Start()
     {
+        transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         offset = transform.position - player.transform.position;
     }
 
