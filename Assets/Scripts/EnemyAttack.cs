@@ -12,9 +12,11 @@ public class EnemyAttack : MonoBehaviour
     GameObject player;
     PlayerHealth playerHealth;
     //EnemyHealth enemyHealth;
+    private Animator anim;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         //enemyHealth = GetComponent<EnemyHealth>();
@@ -27,19 +29,20 @@ public class EnemyAttack : MonoBehaviour
         Attack();
     }
 
-
     void Attack()
     {
         if (player)
         {
             bool playerInRange = Vector3.Distance(transform.position, player.transform.position) < attackRange;
             bool timeToAttack = timer >= timeBetweenAttacks;
+            bool playerIsAlive = playerHealth.currentHealth > 0;
 
-            if (playerInRange && timeToAttack)
+            if (playerInRange && playerIsAlive)
             {
-                timer = 0f;
-                playerHealth.TakeDamage(attackDamage);
+                anim.SetTrigger("attack0");
             }
         }
     }
 }
+
+   

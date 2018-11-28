@@ -76,13 +76,14 @@ public class Player : MonoBehaviour {
         Vector3 upMovement = forward * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
         Vector3 heading = Vector3.Normalize(sideMovement + upMovement);
         Vector3 movement = sideMovement.normalized + upMovement.normalized;
+
         if (heading != Vector3.zero)
         {
             transform.forward = heading;
         }
 
-        rb.MovePosition(rb.transform.position + movement * movementSpeed * Time.deltaTime);
-        //transform.position += sideMovement;
-        //transform.position += upMovement;
+        
+        transform.position += sideMovement;
+        transform.position += upMovement;
     }
 }

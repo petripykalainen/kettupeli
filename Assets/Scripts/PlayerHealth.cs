@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (damaged)
+        if (damaged && currentHealth > 0)
         {
             damageImage.color = flashColour;
         }
