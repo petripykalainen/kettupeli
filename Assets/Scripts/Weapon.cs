@@ -12,7 +12,8 @@ public class Weapon : MonoBehaviour {
 	void Start ()
     {
         player = GameObject.Find("Player").GetComponent<PlayerHealth>();
-        enemyAttack = GameObject.Find("PigmanAnimated").GetComponent<EnemyAttack>();
+        //enemyAttack = GameObject.Find("PigmanAnimated").GetComponent<EnemyAttack>();
+        enemyAttack = GetComponentInParent<EnemyAttack>();
         Debug.Log(player);
 	}
 

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     Rigidbody rb;
     [SerializeField] float movementSpeed = 1.0f;
     Vector3 forward, right;
+    private Animator anim;
     public Transform camera;
 
 
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour {
         //Debug.Log("Playe???  " + player);
         //Debug.Log(weapon.name);
         rb = GetComponentInChildren<Rigidbody>();
+        anim = GetComponent<Animator>();
         //Debug.Log(rb);
         camera = GameObject.Find("PlayerCamera").transform;
         forward = camera.transform.forward;
@@ -33,6 +35,11 @@ public class Player : MonoBehaviour {
         if (Input.anyKey)
         {
             Move();
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            anim.SetTrigger("attack_trigger");
+            Debug.Log("Player Attack");
         }
 
         /*
