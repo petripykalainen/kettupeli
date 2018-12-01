@@ -35,6 +35,7 @@ public class Player : MonoBehaviour {
         if (Input.anyKey)
         {
             Move();
+            Debug.Log("Player Move");
         }
         if (Input.GetKeyUp("space"))
         {
@@ -82,7 +83,6 @@ public class Player : MonoBehaviour {
         Vector3 sideMovement = right * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
         Vector3 upMovement = forward * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
         Vector3 heading = Vector3.Normalize(sideMovement + upMovement);
-        Vector3 movement = sideMovement.normalized + upMovement.normalized;
 
         if (heading != Vector3.zero)
         {

@@ -28,20 +28,12 @@ public class PlayerAttack : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == enemy)
+        if (other.tag == "Enemy")
         {
-            enemyInRange = true;
+            other.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
     }
 
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == enemy)
-        {
-            enemyInRange = false;
-        }
-    }
 
 
     void Update()
