@@ -471,6 +471,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1814730443966442, guid: bbd523d072b02664a9e9d734a51cb0c6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbd523d072b02664a9e9d734a51cb0c6, type: 2}
   m_IsPrefabAsset: 0
@@ -627,6 +631,11 @@ MonoBehaviour:
   - {fileID: 962167110}
   - {fileID: 962167109}
   - {fileID: 962167108}
+--- !u!4 &853061540 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4811871479391478, guid: bbd523d072b02664a9e9d734a51cb0c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 253806323}
 --- !u!1001 &962167107
 Prefab:
   m_ObjectHideFlags: 0
@@ -805,6 +814,64 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5918d93f09d9c82419e3825d8c5f20ea, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1474021241
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 853061540}
+    m_Modifications:
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ff19bc9ce445515459a6d8d7ba680675, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 405f12d4978ac73419268adf7c149374, type: 3}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1551092554
 Prefab:
   m_ObjectHideFlags: 0
@@ -946,3 +1013,20 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c5e62aea45f11943804fe2eef77092d, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1980745490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100108, guid: 405f12d4978ac73419268adf7c149374,
+    type: 3}
+  m_PrefabInternal: {fileID: 1474021241}
+--- !u!114 &1980745493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1980745490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b5ec1b54398de428914cfe9f04811c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
