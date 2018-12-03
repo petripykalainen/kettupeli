@@ -1180,7 +1180,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1916600096451618}
   m_LocalRotation: {x: -0, y: -0.7753615, z: -0, w: 0.63151765}
-  m_LocalPosition: {x: 16.24, y: 0, z: 2.42}
+  m_LocalPosition: {x: 14.62, y: 0, z: 1.89}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4749428995697900}
@@ -1320,7 +1320,7 @@ Animator:
   m_GameObject: {fileID: 1916600096451618}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c6b644e8a94bba74e9224e50d333344a, type: 3}
-  m_Controller: {fileID: 9100000, guid: c11c8b1b3f008b040a9b8df15f8818d8, type: 2}
+  m_Controller: {fileID: 9100000, guid: f6205686ecf68e44980fda33769724b3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1355,6 +1355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d3e027fcef61f47aaa3c8b3ffb249f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathDelay: 2
   startingHealth: 100
   currentHealth: 0
   isDead: 0
@@ -1384,6 +1385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   stoppingDistance: 2.4
+  health: {fileID: 0}
+  attack: {fileID: 0}
   startingPosition: {x: 0, y: 0, z: 0}
   anim: {fileID: 0}
   player: {fileID: 0}
