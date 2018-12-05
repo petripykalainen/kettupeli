@@ -5,38 +5,33 @@ using UnityEngine;
 
 public class EneymSpawner : MonoBehaviour {
 
-    public Enemy enemyprefab;
-    public int enemyAmount = 3;
-    public float spawnTime = 3f;
-    public bool spawnComplete = false;
-    public float timer;
+    [SerializeField] List<Waveconfig> waveconfig;
+    int spawnIndex = 0;
 
-	// Update is called once per frame
-	void Update ()
+    private void Start()
     {
-        timer += Time.deltaTime;
-        bool timeToSpawnEnemies = timer > spawnTime;
-        if (timeToSpawnEnemies)
-        {
-            SpawnWave();
-            timer = 0f;
-        }
-	}
-
-    private void SpawnWave()
-    {
-        for (int i = 0; i < enemyAmount; i++)
-        {
-            StartCoroutine(CreateSingleEnemy());
-        }
-        spawnComplete = true;
+        StartCoroutine(SpawnAllWaves());
     }
 
-    IEnumerator CreateSingleEnemy()
-    { 
-        Debug.Log("Creating enemy");
-        yield return new WaitForSeconds(spawnTime);
-        Debug.Log("Enemy Created");
-        GameObject.Instantiate(enemyprefab, transform.position, Quaternion.identity);
+    private IEnumerator SpawnEnemyWave(Waveconfig wave)
+    {
+        for (int i = 0; i < wave.GetNumberOfEnemies(); i++)
+        {
+            Instantiate(
+            wave.GetEnemy(),
+            transform.position,
+            Quaternion.identity);
+            yield return new WaitForSeconds(wave.GetSpawnTime());
+        }
+        yield return new WaitForSeconds(wave.GetSpawnDuration());
+    }
+
+    private IEnumerator SpawnAllWaves()
+    {
+        for (int i = spawnIndex; i < waveconfig.Count ; i++)
+        {
+            var currentWave = waveconfig[spawnIndex];
+            yield return StartCoroutine(SpawnEnemyWave(waveconfig[i]));
+        }
     }
 }

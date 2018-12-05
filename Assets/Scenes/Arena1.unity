@@ -158,16 +158,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 136729975381277728, guid: 46a7d0b5558be624d877ece8b332f023,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54003793792099084, guid: 46a7d0b5558be624d877ece8b332f023,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46a7d0b5558be624d877ece8b332f023, type: 2}
   m_IsPrefabAsset: 0
@@ -327,12 +317,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 597f088db1d87974f971972d8ea8c6e5, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &993041620 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114812552337128252, guid: 597f088db1d87974f971972d8ea8c6e5,
-    type: 2}
-  m_PrefabInternal: {fileID: 731845146}
-  m_Script: {fileID: 11500000, guid: 0027ebf6fc9225e4a92fd66f6aaa3e63, type: 3}
 --- !u!1001 &1151597627
 Prefab:
   m_ObjectHideFlags: 0
@@ -371,26 +355,6 @@ Prefab:
     - target: {fileID: 4973517870871588, guid: 720ff7163040dd64da5dd80fc059e9a3, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 20754558422936450, guid: 720ff7163040dd64da5dd80fc059e9a3,
-        type: 2}
-      propertyPath: orthographic size
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 20754558422936450, guid: 720ff7163040dd64da5dd80fc059e9a3,
-        type: 2}
-      propertyPath: far clip plane
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 20754558422936450, guid: 720ff7163040dd64da5dd80fc059e9a3,
-        type: 2}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 20754558422936450, guid: 720ff7163040dd64da5dd80fc059e9a3,
-        type: 2}
-      propertyPath: orthographic
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 720ff7163040dd64da5dd80fc059e9a3, type: 2}
@@ -479,11 +443,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f36cb44e7498444ba3634230dfa481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyprefab: {fileID: 993041620}
-  enemyAmount: 3
-  spawnTime: 3
-  spawnComplete: 0
-  timer: 0
+  waveconfig:
+  - {fileID: 11400000, guid: 2e7168e478b88a54e887214090ed05e9, type: 2}
+  - {fileID: 11400000, guid: e0076aa7b8f1e9945bfaa9f908ac4fb2, type: 2}
+  - {fileID: 11400000, guid: 9f70c2c3221e7f74dbd6f575f095a350, type: 2}
 --- !u!4 &1509097133
 Transform:
   m_ObjectHideFlags: 0
