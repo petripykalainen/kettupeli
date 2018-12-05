@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 33877561900828012}
   - component: {fileID: 23090587363080378}
   - component: {fileID: 64795404740282284}
-  - component: {fileID: 114619926222771234}
+  - component: {fileID: 114906321814559770}
   m_Layer: 0
   m_Name: Cutter
   m_TagString: Untagged
@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1458153361307454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.55, y: 2.618846e-11, z: -3.09}
+  m_LocalPosition: {x: 12.278686, y: 1.3093818e-10, z: 7.2831063}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4832780041620590}
@@ -103,7 +103,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4238472545586642}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 264, z: 0}
 --- !u!23 &23090587363080378
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -218,7 +218,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &114619926222771234
+--- !u!114 &114906321814559770
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +226,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1718030626932826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da96ce9f89aa04e49b62355ce12e85ac, type: 3}
+  m_Script: {fileID: 11500000, guid: a411c293535ae5e479e73891ea815c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 25
+  Damage: 10
+  timeBetweenAttacks: 0.5

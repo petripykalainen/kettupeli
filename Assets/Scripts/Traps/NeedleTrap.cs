@@ -26,7 +26,7 @@ public class NeedleTrap : MonoBehaviour
         {
             objectCollided.GetComponent<EnemyHealth>().TakeDamage(Damage);
         }
-        else if (objectCollided.tag == "Player")
+        else if (objectCollided.CompareTag("Player"))
         {
             objectCollided.GetComponent<PlayerHealth>().TakeDamage(Damage);
         }

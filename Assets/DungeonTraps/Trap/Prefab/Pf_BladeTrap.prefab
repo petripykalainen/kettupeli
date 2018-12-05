@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 499366}
   - component: {fileID: 3399368}
   - component: {fileID: 2399368}
+  - component: {fileID: 64589848380802472}
+  - component: {fileID: 114985938875026908}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
@@ -83,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.69, y: 0, z: 0}
+  m_LocalPosition: {x: 11.2892275, y: -0.00003479004, z: 13.952579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 499368}
@@ -201,3 +203,29 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 199370}
   m_IsPrefabAsset: 1
+--- !u!64 &64589848380802472
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: d7c86d0a96a13c94b9624c29250e11e4, type: 3}
+--- !u!114 &114985938875026908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2840e3cd38317c45bee2ce55bdaec49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 25
