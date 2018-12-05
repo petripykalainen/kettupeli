@@ -14,7 +14,7 @@ public class health_pickup : MonoBehaviour {
 
     public void Use()
     {
-        Instantiate(healthEffect, player.transform.position, Quaternion.identity);
+        Instantiate(healthEffect, player.transform.position, Quaternion.Euler(-90, 0, 0));  // Quaternion.identity
         Destroy(gameObject);
     }
 }
