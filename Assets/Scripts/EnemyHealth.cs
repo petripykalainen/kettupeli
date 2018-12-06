@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public int startingHealth = 100;
     public int currentHealth;
     public bool isDead;
+    public bool onFire = false;
 
     Animator anim;
 
