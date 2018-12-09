@@ -8,6 +8,9 @@ public class Stone : MonoBehaviour {
     Vector3 rotation = Vector3.right;
     float speed = 0.3f;
     int waypointIndex = 0;
+    float timer;
+    [SerializeField] float attackTimer = 1.0f;
+    [SerializeField] int attackDamage = 15;
 
 	// Use this for initialization
 	void Start ()
@@ -20,6 +23,8 @@ public class Stone : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        timer += Time.deltaTime;
+
         transform.RotateAround(transform.position, rotation, 3f);
 
         if (waypointIndex > 1)
@@ -42,7 +47,11 @@ public class Stone : MonoBehaviour {
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("Hit Player");
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+        }
+        if (collision.transform.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
     }
 }
