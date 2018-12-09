@@ -31,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDead = true;
+            FindObjectOfType<GameStatus>().ReduceEnemyCount();
             Death();
         }
     }
@@ -47,10 +48,10 @@ public class EnemyHealth : MonoBehaviour
     {
         anim.SetTrigger("Die");
         deathDelay = deathDelay + anim.GetCurrentAnimatorClipInfo(0)[0].clip.length;
-        Debug.Log(anim.GetCurrentAnimatorClipInfo(0)[0].clip.length);
-        Debug.Log("Removing body in " + deathDelay + " seconds");
+        //Debug.Log(anim.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+        //Debug.Log("Removing body in " + deathDelay + " seconds");
         yield return new WaitForSeconds(deathDelay);
-        Debug.Log("Removing body");
+        //Debug.Log("Removing body");
         Destroy(gameObject);
     }
 }

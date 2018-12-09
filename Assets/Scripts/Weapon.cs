@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour {
         player = GameObject.Find("Player").GetComponent<PlayerHealth>();
         //enemyAttack = GameObject.Find("PigmanAnimated").GetComponent<EnemyAttack>();
         enemyAttack = GetComponentInParent<EnemyAttack>();
-        Debug.Log(player);
+        //Debug.Log(player);
 	}
 
     private void OnTriggerEnter(Collider other)
