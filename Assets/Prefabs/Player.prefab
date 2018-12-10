@@ -1407,7 +1407,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1432280483500716}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.416, y: 0, z: 0}
   m_LocalScale: {x: 0.826761, y: 0.646902, z: 0.826761}
   m_Children: []
   m_Father: {fileID: 4243647688663974}
@@ -1460,7 +1460,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1786906255302662}
-  m_LocalRotation: {x: 0.013656135, y: 0.020667786, z: 0.00085541187, w: 0.99969274}
+  m_LocalRotation: {x: 0.013656136, y: 0.020667786, z: 0.0008554119, w: 0.99969274}
   m_LocalPosition: {x: -0.050628025, y: -0.000000009536743, z: 5.9604643e-10}
   m_LocalScale: {x: 0.99999976, y: 0.9999997, z: 1.0000001}
   m_Children:
@@ -1649,7 +1649,7 @@ Animator:
   m_GameObject: {fileID: 1848657295751656}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4bbc523e66a4ec143aaf6d848de01ca0, type: 2}
+  m_Controller: {fileID: 9100000, guid: ff19bc9ce445515459a6d8d7ba680675, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1699,7 +1699,6 @@ MonoBehaviour:
   currentHealth: 0
   healthSlider: {fileID: 0}
   damageImage: {fileID: 0}
-  deathMessage: {fileID: 0}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   isDead: 0
@@ -1779,7 +1778,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 10d74617a494dbf4abf86841ca218283, type: 3}
+  m_Mesh: {fileID: 4300000, guid: a1ce8c37f930d374bb8da6ca45ff6ae5, type: 3}
   m_Bones:
   - {fileID: 4946371856878224}
   - {fileID: 4247060463662724}

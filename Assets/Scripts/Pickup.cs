@@ -9,7 +9,7 @@ public class Pickup : MonoBehaviour
     private AudioPlayer audio;
     private AudioSource source;
     public GameObject itemButton;
-    //public GameObject effect;
+    public GameObject effect;
     public int objectID;
     GameObject player;
     PlayerHealth playerHealth;
