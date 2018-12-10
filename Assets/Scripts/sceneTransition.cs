@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sceneTransition : MonoBehaviour {
+public class SceneTransition : MonoBehaviour {
 
     public void LoadNextScene()
     {
@@ -38,5 +38,10 @@ public class sceneTransition : MonoBehaviour {
     public void LoadGameOver()
     {
         SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings-1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

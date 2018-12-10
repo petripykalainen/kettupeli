@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameStatus : MonoBehaviour {
 
-    sceneTransition sceneChanger;
+    SceneTransition sceneChanger;
     EnemySpawner[] listOfEnemies;
     PlayerHealth player;
     [SerializeField] string winText = " Winner is you";
@@ -15,7 +15,7 @@ public class GameStatus : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        sceneChanger = GetComponent<sceneTransition>();
+        sceneChanger = GetComponent<SceneTransition>();
         winMessage = GameObject.Find("DeathMessage").GetComponent<Text>();
         listOfEnemies = FindObjectsOfType<EnemySpawner>();
         CountEnemies(listOfEnemies);

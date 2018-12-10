@@ -10,6 +10,12 @@ public class EnemySpawner : MonoBehaviour {
 
     private void Start()
     {
+        StartCoroutine(SpawnWithDelay());
+    }
+
+    IEnumerator SpawnWithDelay()
+    {
+        yield return new WaitForSeconds(3f);
         StartCoroutine(SpawnAllWaves());
     }
 
