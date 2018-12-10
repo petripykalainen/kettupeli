@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class GameStatus : MonoBehaviour {
 
+    sceneTransition sceneChanger;
     EnemySpawner[] listOfEnemies;
+    PlayerHealth player;
     [SerializeField] string winText = " Winner is you";
     Text winMessage;
     int enemyCount = 0;
@@ -13,9 +15,8 @@ public class GameStatus : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        sceneChanger = GetComponent<sceneTransition>();
         winMessage = GameObject.Find("DeathMessage").GetComponent<Text>();
-        Debug.Log(winMessage);
-        winMessage.text = winText;
         listOfEnemies = FindObjectsOfType<EnemySpawner>();
         CountEnemies(listOfEnemies);
 	}
@@ -23,10 +24,10 @@ public class GameStatus : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (enemyCount <= 0)
+        if (enemyCount <= 0 && !FindObjectOfType<PlayerHealth>().isDead)
         {
-            Debug.Log("Winner is you!");
-            winGame();
+            //Debug.Log("Winner is you!");
+            WinLevel();
         }
 	}
 
@@ -45,8 +46,27 @@ public class GameStatus : MonoBehaviour {
         Debug.Log("removing one enemy from list. Total amount of enemies remaining: " + enemyCount);
     }
 
-    public void winGame()
+    public void WinLevel()
     {
-        winMessage.text = winText;
+        StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 3f));
+    }
+
+    IEnumerator LoadNextSceneWithDelayAndMessage(string messageText, float delay)
+    {
+        winMessage.text = messageText;
+        yield return new WaitForSeconds(delay);
+        sceneChanger.LoadNextScene();
+    }
+
+    IEnumerator LoadGameOverScreenWithDelayAndMessage(string messageText, float delay)
+    {
+        winMessage.text = messageText;
+        yield return new WaitForSeconds(delay);
+        sceneChanger.LoadGameOver();
+    }
+
+    public void LoseGame()
+    {
+        StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 1f));
     }
 }

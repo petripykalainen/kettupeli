@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     Rigidbody rb;
-    [SerializeField] float movementSpeed = 1.0f;
+    [SerializeField] public float movementSpeed = 1.0f;
     Vector3 forward, right;
     private Animator anim;
     public Transform camera;

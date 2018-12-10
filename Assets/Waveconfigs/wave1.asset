@@ -16,4 +16,4 @@ MonoBehaviour:
   spawnTimer: 0.5
   spawnVariationTime: 0.3
   numberOfEnemies: 3
-  spawnDuration: 5
+  spawnDuration: 2

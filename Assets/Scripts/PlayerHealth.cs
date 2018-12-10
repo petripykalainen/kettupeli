@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public Slider healthSlider;
     public Image damageImage;
-    public Text deathMessage;
+    //public Text deathMessage;
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public bool isDead;
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = startingHealth;
-        deathMessage.text = "";
+        //deathMessage.text = "";
     }
 
 
@@ -53,6 +53,9 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
-        deathMessage.text = "You have died!";
+        var asd = FindObjectOfType<GameStatus>();
+        Debug.Log(asd);
+        asd.LoseGame();
+        //deathMessage.text = "You have died!";
     }
 }
