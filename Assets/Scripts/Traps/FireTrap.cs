@@ -41,8 +41,11 @@ public class FireTrap : MonoBehaviour
         int currentCount = 0;
         while (currentCount <= tickAmount)
         {
+            ParticleSystem fire = other.GetComponentInChildren<ParticleSystem>();
+            fire.Play();
             other.GetComponent<PlayerHealth>().TakeDamage(Damage);
             yield return new WaitForSeconds(timeBetweenTicks);
+            fire.Stop();
             currentCount++;
         }
         other.GetComponent<PlayerHealth>().onFire = false;
@@ -54,8 +57,11 @@ public class FireTrap : MonoBehaviour
         int currentCount = 0;
         while (currentCount <= tickAmount)
         {
+            ParticleSystem fire = other.GetComponentInChildren<ParticleSystem>();
+            fire.Play();
             other.GetComponent<EnemyHealth>().TakeDamage(Damage);
             yield return new WaitForSeconds(timeBetweenTicks);
+            fire.Stop();
             currentCount++;
         }
         other.GetComponent<EnemyHealth>().onFire = false;
