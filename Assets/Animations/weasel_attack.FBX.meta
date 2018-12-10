@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2f4e22d809c23f4e95e01fa38b30013
+guid: dec760b28c1e1aa41896577974eb31c2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -107,7 +107,7 @@ ModelImporter:
     400098: CATLudoTail4
     400100: CATLudoTail5
     400102: //RootNode
-    7400000: idle
+    7400000: attack
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -138,10 +138,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: idle
+      name: attack
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
