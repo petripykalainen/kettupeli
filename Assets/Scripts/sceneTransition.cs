@@ -29,4 +29,14 @@ public class sceneTransition : MonoBehaviour {
     {
         SceneManager.LoadScene(0);
     }
+
+    public int GetCurrentScene()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings-1);
+    }
 }

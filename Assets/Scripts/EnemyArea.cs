@@ -6,12 +6,12 @@ public class EnemyArea : MonoBehaviour
 {
     [SerializeField] GameObject guard;
     bool occupied = false;
-    Enemy enemy;
+    //Enemy enemy;
 
     // Use this for initialization
     void Start()
     {
-        enemy = guard.GetComponent<Enemy>();
+        //enemy = guard.GetComponent<Enemy>();
     }
 
     // Update is called once per frame

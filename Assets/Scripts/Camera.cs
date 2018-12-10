@@ -11,16 +11,10 @@ public class Camera : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        player = GameObject.Find("Player").transform.GetChild(0);
+        player = GameObject.Find("Player").transform;
         //Debug.Log("Found " + player);
-        offset = transform.position - player.transform.position;
+        offset = transform.position - player.position;
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-
-    }
 
     private void LateUpdate()
     {
@@ -29,6 +23,6 @@ public class Camera : MonoBehaviour {
 
     public void UpdateCameraPosition()
     {
-        transform.position = player.transform.position + offset;
+        transform.position = player.position + offset;
     }
 }

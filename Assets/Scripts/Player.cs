@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     Rigidbody rb;
     [SerializeField] public float movementSpeed = 1.0f;
     Vector3 forward, right;
+    private Animator anim;
     public Transform camera;
     private float OGspeed;
     private float speedTimer;
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour {
         //Debug.Log("Playe???  " + player);
         //Debug.Log(weapon.name);
         rb = GetComponentInChildren<Rigidbody>();
+        anim = GetComponent<Animator>();
         //Debug.Log(rb);
         camera = GameObject.Find("PlayerCamera").transform;
         forward = camera.transform.forward;
@@ -35,6 +37,12 @@ public class Player : MonoBehaviour {
         if (Input.anyKey)
         {
             Move();
+            Debug.Log("Player Move");
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            anim.SetTrigger("attack_trigger");
+            Debug.Log("Player Attack");
         }
 
         if (speedTimerActive)
@@ -94,14 +102,14 @@ public class Player : MonoBehaviour {
         Vector3 sideMovement = right * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
         Vector3 upMovement = forward * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
         Vector3 heading = Vector3.Normalize(sideMovement + upMovement);
-        Vector3 movement = sideMovement.normalized + upMovement.normalized;
+
         if (heading != Vector3.zero)
         {
             transform.forward = heading;
         }
 
-        rb.MovePosition(rb.transform.position + movement * movementSpeed * Time.deltaTime);
-        //transform.position += sideMovement;
-        //transform.position += upMovement;
+        
+        transform.position += sideMovement;
+        transform.position += upMovement;
     }
 }
