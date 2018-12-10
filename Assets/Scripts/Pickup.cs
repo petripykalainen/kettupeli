@@ -13,7 +13,8 @@ public class Pickup : MonoBehaviour
     public int objectID;
     GameObject player;
     PlayerHealth playerHealth;
-    public float timeLeft;
+    
+
     private void Start()
     {
 
@@ -21,13 +22,15 @@ public class Pickup : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         audio = GameObject.Find("audioManager").GetComponent<AudioPlayer>();
         source = GetComponent<AudioSource>();
+        
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
-        timeLeft = 0f;
+        
     }
 
     public void Update()
-    {
+    {       
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -67,11 +70,7 @@ public class Pickup : MonoBehaviour
                 break;
 
             case 2:
-
-                GameObject.Find("Player").GetComponent<Player>().movementSpeed *= 2;
-                timeLeft = 5f + Time.deltaTime;
-                Debug.Log("case2 "+timeLeft);
-              //  StartCoroutine("ResetSpeed");
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SpeedBoost(5f);
                 break;
 
             default:
@@ -80,17 +79,4 @@ public class Pickup : MonoBehaviour
         }
     }
 
-    //IEnumerator ResetSpeed()
-    //{
-    //    Debug.Log("In reset " + timeLeft);
-    //    while (true)
-    //    {
-    //        if (timeLeft < Time.deltaTime)
-    //        {
-    //            GameObject.Find("Player").GetComponent<Player>().movementSpeed /= 2;
-    //        }
-    //        Debug.Log("losing time " + timeLeft);
-    //    }
-        
-    //}
 }

@@ -8,10 +8,12 @@ public class Player : MonoBehaviour {
     [SerializeField] public float movementSpeed = 1.0f;
     Vector3 forward, right;
     public Transform camera;
+    private float OGspeed;
+    private float speedTimer;
+    private bool speedTimerActive;
 
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         //Debug.Log("Playe???  " + player);
         //Debug.Log(weapon.name);
@@ -22,7 +24,7 @@ public class Player : MonoBehaviour {
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
-
+        OGspeed = movementSpeed;
 
     }
     
@@ -33,6 +35,16 @@ public class Player : MonoBehaviour {
         if (Input.anyKey)
         {
             Move();
+        }
+
+        if (speedTimerActive)
+        {
+            speedTimer -= Time.deltaTime;
+            if (speedTimer < 0)
+            {
+                movementSpeed = OGspeed;
+                speedTimerActive = false;
+            }
         }
 
         /*
@@ -48,6 +60,13 @@ public class Player : MonoBehaviour {
 
 
 
+    }
+
+    public void SpeedBoost(float duration)
+    {
+        speedTimerActive = true;
+        speedTimer = duration;
+        movementSpeed *= 2;
     }
 
     private void Move()
