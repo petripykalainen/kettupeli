@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     Rigidbody rb;
-    [SerializeField] float movementSpeed = 1.0f;
+    [SerializeField] public float movementSpeed = 1.0f;
     Vector3 forward, right;
     public Transform camera;
 
@@ -24,11 +24,11 @@ public class Player : MonoBehaviour {
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
 
 
+    }
+    
 
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+    // Update is called once per frame
+    void FixedUpdate ()
     {
         if (Input.anyKey)
         {

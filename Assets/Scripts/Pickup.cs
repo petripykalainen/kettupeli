@@ -2,22 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour {
+public class Pickup : MonoBehaviour
+{
 
     private Inventory inventory;
     private AudioPlayer audio;
     private AudioSource source;
     public GameObject itemButton;
-    public GameObject effect;
-
+    //public GameObject effect;
+    public int objectID;
+    GameObject player;
+    PlayerHealth playerHealth;
+    public float timeLeft;
     private void Start()
     {
+
         //source = GetComponent<AudioSource>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         audio = GameObject.Find("audioManager").GetComponent<AudioPlayer>();
         source = GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
+        timeLeft = 0f;
     }
 
+    public void Update()
+    {
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -31,18 +42,55 @@ public class Pickup : MonoBehaviour {
                     //Instantiate(effect, transform.position, Quaternion.identity);
                     inventory.items[i] = 1; // makes sure that the slot is now considered FULL
                     Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
+                    StatUpdateOnPickUp(objectID);
                     audio.playPickupAudio();
                     Destroy(gameObject);
                     break;
                 }
-                if (i == inventory.items.Length - 1 && inventory.items[i] == 1) {
+                if (i == inventory.items.Length - 1 && inventory.items[i] == 1)
+                {
                     //source.PlayOneShot(audio.inventoryAudio, 1f);
                     audio.playInventoryAudio();
-                    Debug.Log("Haista paska");
+                    //Debug.Log("Haista paska");
                 }
             }
         }
+    }
+    public void StatUpdateOnPickUp(int objectID)
+    {
 
+        switch (objectID)
+        {
+            case 1:
+
+                playerHealth.TakeDamage(-20);
+                break;
+
+            case 2:
+
+                GameObject.Find("Player").GetComponent<Player>().movementSpeed *= 2;
+                timeLeft = 5f + Time.deltaTime;
+                Debug.Log("case2 "+timeLeft);
+              //  StartCoroutine("ResetSpeed");
+                break;
+
+            default:
+                Debug.Log("Default case");
+                break;
+        }
     }
 
+    //IEnumerator ResetSpeed()
+    //{
+    //    Debug.Log("In reset " + timeLeft);
+    //    while (true)
+    //    {
+    //        if (timeLeft < Time.deltaTime)
+    //        {
+    //            GameObject.Find("Player").GetComponent<Player>().movementSpeed /= 2;
+    //        }
+    //        Debug.Log("losing time " + timeLeft);
+    //    }
+        
+    //}
 }

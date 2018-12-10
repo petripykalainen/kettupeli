@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,6 +156,11 @@ Prefab:
       propertyPath: m_Name
       value: pickupItem (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114141928917132012, guid: 5918d93f09d9c82419e3825d8c5f20ea,
+        type: 2}
+      propertyPath: objectID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5918d93f09d9c82419e3825d8c5f20ea, type: 2}
   m_IsPrefabAsset: 0
@@ -264,6 +269,11 @@ Prefab:
       propertyPath: m_Name
       value: pickupItem (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114141928917132012, guid: 5918d93f09d9c82419e3825d8c5f20ea,
+        type: 2}
+      propertyPath: objectID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5918d93f09d9c82419e3825d8c5f20ea, type: 2}
   m_IsPrefabAsset: 0
@@ -371,6 +381,11 @@ Prefab:
     - target: {fileID: 4089659687275972, guid: 5918d93f09d9c82419e3825d8c5f20ea, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114141928917132012, guid: 5918d93f09d9c82419e3825d8c5f20ea,
+        type: 2}
+      propertyPath: objectID
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5918d93f09d9c82419e3825d8c5f20ea, type: 2}
@@ -858,6 +873,11 @@ Prefab:
       propertyPath: m_Name
       value: pickupItem (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114141928917132012, guid: 5918d93f09d9c82419e3825d8c5f20ea,
+        type: 2}
+      propertyPath: objectID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5918d93f09d9c82419e3825d8c5f20ea, type: 2}
   m_IsPrefabAsset: 0
@@ -961,6 +981,11 @@ Prefab:
     - target: {fileID: 1954790850858910, guid: 5918d93f09d9c82419e3825d8c5f20ea, type: 2}
       propertyPath: m_Name
       value: pickupItem (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114141928917132012, guid: 5918d93f09d9c82419e3825d8c5f20ea,
+        type: 2}
+      propertyPath: objectID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5918d93f09d9c82419e3825d8c5f20ea, type: 2}
