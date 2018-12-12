@@ -14,12 +14,14 @@ public class PlayerHealth : MonoBehaviour
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public bool isDead;
     public bool onFire = false;
+    Animator anim;
 
     bool damaged;
 
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         currentHealth = startingHealth;
         //deathMessage.text = "";
     }
@@ -56,6 +58,10 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
+
+        anim.SetTrigger("Dead");
+        anim.SetBool("isDead", isDead);
+
         var asd = FindObjectOfType<GameStatus>();
         Debug.Log(asd);
         asd.LoseGame();

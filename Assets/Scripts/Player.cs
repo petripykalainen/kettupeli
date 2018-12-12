@@ -6,52 +6,66 @@ public class Player : MonoBehaviour {
 
     Rigidbody rb;
     [SerializeField] public float movementSpeed = 1.0f;
+    PlayerHealth health;
     Vector3 forward, right;
-    private Animator anim;
     public Transform camera;
+    Animator anim;
     private float OGspeed;
     private float speedTimer;
     private bool speedTimerActive;
+    public bool isMoving;
 
     // Use this for initialization
     void Start ()
     {
+        health = GetComponent<PlayerHealth>();
+        anim = GetComponent<Animator>();
         //Debug.Log("Playe???  " + player);
         //Debug.Log(weapon.name);
         rb = GetComponentInChildren<Rigidbody>();
-        anim = GetComponent<Animator>();
-        //Debug.Log(rb);
         camera = GameObject.Find("PlayerCamera").transform;
         forward = camera.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
         OGspeed = movementSpeed;
-
     }
-    
+
 
     // Update is called once per frame
     void FixedUpdate ()
     {
-        if (Input.anyKey)
-        {
-            Move();
-            Debug.Log("Player Move");
-        }
-        if (Input.GetKeyUp("space"))
-        {
-            //anim.SetTrigger("attack_trigger");
-            Debug.Log("Player Attack");
-        }
 
-        if (speedTimerActive)
+        isMoving = Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0;
+        anim.SetBool("isMoving", isMoving);
+
+        if (!health.isDead)
         {
-            speedTimer -= Time.deltaTime;
-            if (speedTimer < 0)
+            if (Input.anyKey)
             {
-                movementSpeed = OGspeed;
-                speedTimerActive = false;
+                Move();
+                //Debug.Log("Player Move");
+            }
+            if (Input.GetKeyUp("space"))
+            {
+                if (isMoving)
+                {
+                    anim.SetTrigger("move_attack_trigger");
+                }
+                else
+                {
+                    anim.SetTrigger("attack_trigger");
+                }
+            }
+
+            if (speedTimerActive)
+            {
+                speedTimer -= Time.deltaTime;
+                if (speedTimer < 0)
+                {
+                    movementSpeed = OGspeed;
+                    speedTimerActive = false;
+                }
             }
         }
 
@@ -102,13 +116,13 @@ public class Player : MonoBehaviour {
         Vector3 sideMovement = right * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
         Vector3 upMovement = forward * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
         Vector3 heading = Vector3.Normalize(sideMovement + upMovement);
+        Debug.Log("SIDEMOVEMENT: " + sideMovement);
+        Debug.Log("UPMOVEMENT: " + upMovement);
 
         if (heading != Vector3.zero)
         {
             transform.forward = heading;
         }
-
-        
         transform.position += sideMovement;
         transform.position += upMovement;
     }
