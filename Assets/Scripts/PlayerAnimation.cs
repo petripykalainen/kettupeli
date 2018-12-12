@@ -8,11 +8,13 @@ public class PlayerAnimation : MonoBehaviour {
     private float move_y;
     private bool isAttacking;
     public Animator anim;
+    GameObject player;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
-	}
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,6 +32,10 @@ public class PlayerAnimation : MonoBehaviour {
         else {
             isAttacking = false;
             anim.SetBool("isAttacking", isAttacking);
+        }
+        if (player.GetComponent<PlayerHealth>().isDead == true)
+        {
+            anim.SetTrigger("Dead");
         }
 
         move_x = Input.GetAxis("Horizontal");

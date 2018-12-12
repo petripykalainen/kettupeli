@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2f4e22d809c23f4e95e01fa38b30013
+guid: 595aa67590569764da14c00daa7338fe
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -107,7 +107,7 @@ ModelImporter:
     400098: CATLudoTail4
     400100: CATLudoTail5
     400102: //RootNode
-    7400000: idle
+    7400000: death
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -138,17 +138,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: idle
+      name: death
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour
 {
     public int startingHealth = 100;
-    public const int maxHealth = 200;
+    public const int maxHealth = 100;
     public int currentHealth;
     public Slider healthSlider;
     public Image damageImage;

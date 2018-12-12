@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65724630496885378}
   - component: {fileID: 114141928917132012}
   m_Layer: 0
-  m_Name: pickupItem
+  m_Name: pickupItem 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,6 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3111332feff9a2d4bb67941708d4b028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 1460186440179602, guid: af81dcf2a89a27845a5a4185fbc776ea, type: 2}
+  itemButton: {fileID: 1460186440179602, guid: 54d2214371ec9c74ab01ed7750fd6f57, type: 2}
   effect: {fileID: 1818026244126470, guid: 3aac586b8a582a049ab21a86935b88ee, type: 2}
   objectID: 0

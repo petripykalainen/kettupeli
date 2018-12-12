@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2f4e22d809c23f4e95e01fa38b30013
+guid: 18ae22b682fa0db428b6434688924866
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -54,7 +54,10 @@ ModelImporter:
     100096: CATLudoTail3
     100098: CATLudoTail4
     100100: CATLudoTail5
-    100102: //RootNode
+    100102: Head
+    100104: model_v004_samurai_v004_rig
+    100106: Tail
+    100108: //RootNode
     400000: CATLudoHead
     400002: CATLudoHead_left_Ear
     400004: CATLudoHead_left_EarBone001
@@ -106,9 +109,18 @@ ModelImporter:
     400096: CATLudoTail3
     400098: CATLudoTail4
     400100: CATLudoTail5
-    400102: //RootNode
-    7400000: idle
+    400102: Head
+    400104: model_v004_samurai_v004_rig
+    400106: Tail
+    400108: //RootNode
+    2100000: No Name
+    4300000: model_v004_samurai_v004_rig
+    4300002: Head
+    4300004: Tail
     9500000: //RootNode
+    13700000: Head
+    13700002: model_v004_samurai_v004_rig
+    13700004: Tail
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -136,35 +148,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: idle
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 60
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -196,7 +180,7 @@ ModelImporter:
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 2
     human: []
@@ -212,8 +196,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 18ae22b682fa0db428b6434688924866,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
