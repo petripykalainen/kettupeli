@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 //TÄMÄ PASKA EI SAA VAIHTUA VITTU
-public class SceneTransition : MonoBehaviour {
+public class sceneTransition : MonoBehaviour {
 
     public void LoadNextScene()
     {
