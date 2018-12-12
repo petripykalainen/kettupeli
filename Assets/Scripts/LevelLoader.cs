@@ -8,14 +8,14 @@ public class LevelLoader : MonoBehaviour {
     AudioSource audioPlayer;
     [SerializeField] float startDelay = 1.5f;
     [SerializeField] AudioClip importantMenuSound;
-    SceneTransition sceneChanger;
+    sceneTransition sceneChanger;
     [SerializeField] int timeToWait = 4;
 	
     // Use this for initialization
 	void Start ()
     {
         audioPlayer = GetComponent<AudioSource>();
-        sceneChanger = GetComponent<SceneTransition>();
+        sceneChanger = GetComponent<sceneTransition>();
         currentSceneIndex = sceneChanger.GetCurrentScene();
         if (currentSceneIndex == 0)
         {
