@@ -116,9 +116,7 @@ public class Player : MonoBehaviour {
         Vector3 sideMovement = right * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
         Vector3 upMovement = forward * movementSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
         Vector3 heading = Vector3.Normalize(sideMovement + upMovement);
-        Debug.Log("SIDEMOVEMENT: " + sideMovement);
-        Debug.Log("UPMOVEMENT: " + upMovement);
-
+        
         if (heading != Vector3.zero)
         {
             transform.forward = heading;

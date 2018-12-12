@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] public int attackDamage = 10;
     [SerializeField] public float attackRange = 4f;
     [SerializeField] public float timer;
+    [SerializeField] List<AudioClip> hitSfx;
+
+    AudioSource audioPlayer;
 
     GameObject player;
     PlayerHealth playerHealth;
@@ -16,15 +20,11 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
+        audioPlayer = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         //enemyHealth = GetComponent<EnemyHealth>();
-
-    }
-
-    void Update()
-    {
 
     }
 
@@ -41,6 +41,13 @@ public class EnemyAttack : MonoBehaviour
                 anim.SetTrigger("Attack");
             }
         }
+    }
+
+    public void PlayAttackSFX()
+    {
+        int index = UnityEngine.Random.Range(0, hitSfx.Count - 1);
+        Debug.Log(hitSfx[index]);
+        audioPlayer.PlayOneShot(hitSfx[index]);
     }
 }
 

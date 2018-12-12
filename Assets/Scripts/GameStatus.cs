@@ -43,7 +43,7 @@ public class GameStatus : MonoBehaviour {
     public void ReduceEnemyCount()
     {
         enemyCount -= 1;
-        Debug.Log("removing one enemy from list. Total amount of enemies remaining: " + enemyCount);
+        //Debug.Log("removing one enemy from list. Total amount of enemies remaining: " + enemyCount);
     }
 
     public void WinLevel()
@@ -67,6 +67,6 @@ public class GameStatus : MonoBehaviour {
 
     public void LoseGame()
     {
-        StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 1f));
+        StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 3f));
     }
 }

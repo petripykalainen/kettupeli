@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour {
             }
         }
 	}
-
+    /*
     private void Charge()
     {
         if (player)
@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour {
             anim.SetBool("Charging", !playerInRange);
         }
     }
+    */
 
     ///<summary>
     ///If not in position target, move there
