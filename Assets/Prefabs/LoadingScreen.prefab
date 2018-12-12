@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150688818809782}
   - component: {fileID: 114041743740701172}
-  - component: {fileID: 114190005950497980}
+  - component: {fileID: 114286473834648040}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -228,7 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7ba0aa263b06d4e999bbba919f3059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 4
+  startDelay: 1.5
+  importantMenuSound: {fileID: 0}
+  timeToWait: 2
 --- !u!114 &114185237100521244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,7 +252,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114190005950497980
+--- !u!114 &114286473834648040
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

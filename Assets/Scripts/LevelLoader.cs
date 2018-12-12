@@ -6,10 +6,12 @@ public class LevelLoader : MonoBehaviour {
 
     int currentSceneIndex;
     AudioSource audioPlayer;
+    [SerializeField] float startDelay = 1.5f;
     [SerializeField] AudioClip importantMenuSound;
     SceneTransition sceneChanger;
     [SerializeField] int timeToWait = 4;
-	// Use this for initialization
+	
+    // Use this for initialization
 	void Start ()
     {
         audioPlayer = GetComponent<AudioSource>();
@@ -30,13 +32,19 @@ public class LevelLoader : MonoBehaviour {
     IEnumerator LoadNextWithDelay(float delay)
     {
         audioPlayer.PlayOneShot(importantMenuSound);
+        Debug.Log("VITTU");
         yield return new WaitForSeconds(delay);
+        Debug.Log("saatana");
         sceneChanger.LoadNextScene();
     }
 
     public void LoadFirstLevel()
     {
-        StartCoroutine(LoadNextWithDelay(3f));
+        //StartCoroutine(LoadNextWithDelay(startDelay));
+        Debug.Log("VITTU");
+        audioPlayer.PlayOneShot(importantMenuSound);
+        Debug.Log("saatana");
+        sceneChanger.LoadNextScene();
     }
 
 }

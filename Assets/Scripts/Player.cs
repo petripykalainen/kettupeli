@@ -41,7 +41,7 @@ public class Player : MonoBehaviour {
         }
         if (Input.GetKeyUp("space"))
         {
-            anim.SetTrigger("attack_trigger");
+            //anim.SetTrigger("attack_trigger");
             Debug.Log("Player Attack");
         }
 

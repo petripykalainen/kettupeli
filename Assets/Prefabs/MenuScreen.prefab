@@ -101,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1438691188414210
 GameObject:
   m_ObjectHideFlags: 1
@@ -573,8 +573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7ba0aa263b06d4e999bbba919f3059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startDelay: 1
   importantMenuSound: {fileID: 8300000, guid: 0dbc5d53cd9d7a04fadc6b6f4dcb19ed, type: 3}
-  timeToWait: 4
+  timeToWait: 2
 --- !u!114 &114380467888734492
 MonoBehaviour:
   m_ObjectHideFlags: 1
