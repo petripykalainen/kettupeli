@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//TÄMÄ PASKA EI SAA VAIHTUA VITTU
 public class SceneTransition : MonoBehaviour {
 
     public void LoadNextScene()
