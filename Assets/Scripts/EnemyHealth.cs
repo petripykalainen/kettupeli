@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] AudioClip deathSfx, hitSfx;
     [SerializeField] List<AudioClip> meleeSfx;
     AudioSource audioPlayer;
+    public GameObject bacon;
 
     Animator anim;
 
@@ -62,6 +63,10 @@ public class EnemyHealth : MonoBehaviour
         //Debug.Log("Removing body in " + deathDelay + " seconds");
         yield return new WaitForSeconds(deathDelay);
         //Debug.Log("Removing body");
+        if (bacon != null)
+        {
+            Instantiate(bacon, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 

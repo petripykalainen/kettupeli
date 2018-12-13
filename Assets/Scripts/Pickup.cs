@@ -34,7 +34,7 @@ public class Pickup : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && gameObject.tag != "Powerup")
         {
             // spawn the sun button at the first available inventory slot ! 
 
@@ -57,6 +57,12 @@ public class Pickup : MonoBehaviour
                     //Debug.Log("Haista paska");
                 }
             }
+        }
+
+        else
+        {
+            StatUpdateOnPickUp(objectID);
+            Destroy(gameObject);
         }
     }
     public void StatUpdateOnPickUp(int objectID)
