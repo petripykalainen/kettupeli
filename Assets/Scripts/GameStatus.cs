@@ -7,19 +7,21 @@ public class GameStatus : MonoBehaviour {
 
     sceneTransition sceneChanger;
     EnemySpawner[] listOfEnemies;
-    PlayerHealth player;
-    [SerializeField] string winText = " Winner is you";
+    PlayerHealth player;    
+    [SerializeField] string winText = " Winner is you ";
     Text winMessage;
     int enemyCount = 0;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         sceneChanger = GetComponent<sceneTransition>();
         winMessage = GameObject.Find("DeathMessage").GetComponent<Text>();
         listOfEnemies = FindObjectsOfType<EnemySpawner>();
         CountEnemies(listOfEnemies);
-	}
+        FindObjectOfType<ScoreCounter>().score = 0;
+        FindObjectOfType<ScoreCounter>().potentialScore = 0;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -27,6 +29,7 @@ public class GameStatus : MonoBehaviour {
         if (enemyCount <= 0 && !FindObjectOfType<PlayerHealth>().isDead)
         {
             //Debug.Log("Winner is you!");
+            winText = " Winner is you \n score : " + FindObjectOfType<ScoreCounter>().score + " \n TotalScore " + FindObjectOfType<ScoreCounter>().totalScore + " \n PotentialScore "+ FindObjectOfType<ScoreCounter>().potentialScore;
             WinLevel();
         }
 	}
@@ -35,7 +38,7 @@ public class GameStatus : MonoBehaviour {
     {
         for (int i = 0; i < enemies.Length; i++)
         {
-            //Debug.Log(enemies[i].GetEnemyCount());
+            //Debug.Log(enemies[i].GetEnemyCount());            
             enemyCount += enemies[i].GetEnemyCount();
         }
     }
@@ -47,8 +50,8 @@ public class GameStatus : MonoBehaviour {
     }
 
     public void WinLevel()
-    {
-        StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 3f));
+    {      
+        StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 3f));       
     }
 
     IEnumerator LoadNextSceneWithDelayAndMessage(string messageText, float delay)
@@ -69,4 +72,5 @@ public class GameStatus : MonoBehaviour {
     {
         StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 3f));
     }
+
 }
