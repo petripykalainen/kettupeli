@@ -17,14 +17,18 @@ public class GameStatus : MonoBehaviour {
     {
         sceneChanger = GetComponent<sceneTransition>();
         winMessage = GameObject.Find("DeathMessage").GetComponent<Text>();
-        listOfEnemies = FindObjectsOfType<EnemySpawner>();
-        CountEnemies(listOfEnemies);
+
+        if (sceneChanger.IsPlayScene())
+        {
+            listOfEnemies = FindObjectsOfType<EnemySpawner>();
+            CountEnemies(listOfEnemies);
+        }
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (enemyCount <= 0 && !FindObjectOfType<PlayerHealth>().isDead)
+        if (enemyCount <= 0 && !FindObjectOfType<PlayerHealth>().isDead && !sceneChanger.IsPlayScene())
         {
             //Debug.Log("Winner is you!");
             WinLevel();

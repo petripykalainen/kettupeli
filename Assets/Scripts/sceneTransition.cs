@@ -45,4 +45,11 @@ public class sceneTransition : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public bool IsPlayScene()
+    {
+        int secondLastIndex = SceneManager.sceneCountInBuildSettings - 2;
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        return currentScene < secondLastIndex && currentScene > 1;
+    }
 }
