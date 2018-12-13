@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
     private bool speedTimerActive;
     public bool isMoving;
 
+    private TrailRenderer trail;
+
     // Use this for initialization
     void Start ()
     {
@@ -29,6 +31,8 @@ public class Player : MonoBehaviour {
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
         OGspeed = movementSpeed;
+
+        trail = gameObject.transform.GetChild(2).GetComponent<TrailRenderer>();
     }
 
 
@@ -65,6 +69,7 @@ public class Player : MonoBehaviour {
                 {
                     movementSpeed = OGspeed;
                     speedTimerActive = false;
+                    trail.emitting = false;
                 }
             }
         }
@@ -86,6 +91,7 @@ public class Player : MonoBehaviour {
 
     public void SpeedBoost(float duration)
     {
+        trail.emitting = true;
         speedTimerActive = true;
         speedTimer = duration;
         movementSpeed *= 2;

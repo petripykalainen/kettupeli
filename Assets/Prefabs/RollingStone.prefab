@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 682311cc3a144144d95d391cb1c09fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  squash_effect: {fileID: 1818026244126470, guid: 3aac586b8a582a049ab21a86935b88ee,
+    type: 2}
   attackTimer: 1
   attackDamage: 110
 --- !u!135 &135447431437475518

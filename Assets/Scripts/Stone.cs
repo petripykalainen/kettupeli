@@ -9,6 +9,9 @@ public class Stone : MonoBehaviour {
     float speed = 0.3f;
     int waypointIndex = 0;
     float timer;
+
+    public GameObject squash_effect;
+
     [SerializeField] float attackTimer = 1.0f;
     [SerializeField] int attackDamage = 15;
 
@@ -53,5 +56,11 @@ public class Stone : MonoBehaviour {
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
+        /*if (collision.transform.tag == "Pickup")
+        {
+            Debug.Log("suoritus");
+            Instantiate(squash_effect, transform.position, Quaternion.identity);
+            Destroy(collision.gameObject);
+        }*/
     }
 }
