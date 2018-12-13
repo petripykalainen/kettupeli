@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour {
     {
         for (int i = 0; i < wave.GetNumberOfEnemies(); i++)
         {
+            
             Instantiate(
             wave.GetEnemy(),
             transform.position,

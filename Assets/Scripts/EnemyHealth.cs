@@ -6,6 +6,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float deathDelay = 1f;
+    [SerializeField] public int scoreForKill = 100;
+    float timeAlive;
     public int startingHealth = 100;
     public int currentHealth;
     public bool isDead;
@@ -18,9 +20,15 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<ScoreCounter>().potentialScore += scoreForKill * 3;
+        timeAlive = 0f;
         audioPlayer = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         currentHealth = startingHealth;
+    }
+    private void Update()
+    {
+        timeAlive += Time.deltaTime;
     }
 
     public void TakeDamage(int amount)
@@ -30,19 +38,18 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= amount;
         anim.SetTrigger("Hit");
         audioPlayer.PlayOneShot(hitSfx);
-        if (currentHealth <= 0)
-        {
-            isDead = true;
-            FindObjectOfType<GameStatus>().ReduceEnemyCount();
-            audioPlayer.PlayOneShot(deathSfx);
-            Death();
-        }
+        if (currentHealth <= 0){ Death(); }
     }
 
 
 
     public void Death()
     {
+        FindObjectOfType<GameStatus>().ReduceEnemyCount();
+        isDead = true;
+        audioPlayer.PlayOneShot(deathSfx);
+        FindObjectOfType<ScoreCounter>().score += ActualScore(scoreForKill);
+        FindObjectOfType<ScoreCounter>().totalScore += ActualScore(scoreForKill);
         anim.SetBool("IsDead", isDead);
         StartCoroutine(RemoveBody());
     }
@@ -63,5 +70,14 @@ public class EnemyHealth : MonoBehaviour
         int index = UnityEngine.Random.Range(0, sounds.Count - 1);
         Debug.Log(sounds[index]);
         audioPlayer.PlayOneShot(sounds[index]);
+    }
+
+    public int ActualScore(int score)
+    {
+        // jos muutatte kertojia, muuttakaa potentialscore start funktiossa
+        if (timeAlive < 2f){ score *= 3; }
+        else if (timeAlive < 5f) { score *= 2; }
+        else if (timeAlive < 10f) { score /= 2; }
+        return score;
     }
 }
