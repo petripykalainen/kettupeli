@@ -11,6 +11,7 @@ public class GameStatus : MonoBehaviour {
     [SerializeField] string winText = " Winner is you";
     Text winMessage;
     int enemyCount = 0;
+    public bool levelWon = false;
 
 	// Use this for initialization
 	void Start ()
@@ -22,16 +23,6 @@ public class GameStatus : MonoBehaviour {
         {
             listOfEnemies = FindObjectsOfType<EnemySpawner>();
             CountEnemies(listOfEnemies);
-        }
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (enemyCount <= 0 && !FindObjectOfType<PlayerHealth>().isDead && !sceneChanger.IsPlayScene())
-        {
-            //Debug.Log("Winner is you!");
-            WinLevel();
         }
 	}
 
@@ -47,11 +38,16 @@ public class GameStatus : MonoBehaviour {
     public void ReduceEnemyCount()
     {
         enemyCount -= 1;
+        if (enemyCount <= 0 && !FindObjectOfType<PlayerHealth>().isDead && sceneChanger.IsPlayScene())
+        {
+            WinLevel();
+        }
         //Debug.Log("removing one enemy from list. Total amount of enemies remaining: " + enemyCount);
     }
 
     public void WinLevel()
     {
+        levelWon = false;
         StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 3f));
     }
 
