@@ -11,7 +11,6 @@ public class GameStatus : MonoBehaviour {
     [SerializeField] string winText = " Winner is you";
     Text winMessage;
     int enemyCount = 0;
-    public bool levelWon = false;
 
 	// Use this for initialization
 	void Start ()
@@ -47,7 +46,6 @@ public class GameStatus : MonoBehaviour {
 
     public void WinLevel()
     {
-        levelWon = false;
         StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 3f));
     }
 
