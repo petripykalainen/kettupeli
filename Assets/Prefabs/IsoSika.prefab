@@ -1486,6 +1486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathDelay: 2
+  scoreForKill: 100
   startingHealth: 100
   currentHealth: 0
   isDead: 0
@@ -1493,6 +1494,7 @@ MonoBehaviour:
   deathSfx: {fileID: 8300000, guid: ce52a557396411c43a959ae194cb79f1, type: 3}
   hitSfx: {fileID: 8300000, guid: 0f90057c1b222b24d802bfbcf958217d, type: 3}
   meleeSfx: []
+  bacon: {fileID: 1892855354630616, guid: 28bbd98e2c2f9624689117459368bee1, type: 2}
 --- !u!114 &114199536617047006
 MonoBehaviour:
   m_ObjectHideFlags: 1
