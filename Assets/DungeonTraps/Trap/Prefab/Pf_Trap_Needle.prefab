@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583359706839086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.904085, y: 0.042347103, z: 23.067133}
+  m_LocalPosition: {x: -2.5728538, y: 0.042347096, z: -7.751117}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4777039571240462}
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261173773784356}
   m_LocalRotation: {x: 1.7112914e-15, y: 1, z: -0.000000021855694, w: 0.0000000754979}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.43154228, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4676283636810210}
@@ -217,7 +217,7 @@ Animation:
   - {fileID: 7400000, guid: 2badb873ba409044db8e5b1246871dd2, type: 2}
   - {fileID: 7400000, guid: 5b338c3066ff22540915b5969709eb8a, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!114 &114343292360324160
@@ -232,3 +232,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 25
+  maxWait: 5
+  minWait: 1

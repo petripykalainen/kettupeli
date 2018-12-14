@@ -8,12 +8,17 @@ public class FireTrap : MonoBehaviour
     public int Damage = 5;
     public int tickAmount = 4;
     public float timeBetweenTicks = 1.0f;
+    public float minWait = 1;
+    public float maxWait = 3;
+    public float burnTime = 5;
+    private ParticleSystem eff;
 
 
     // Use this for initialization
     void Start()
     {
-
+        eff = GetComponent<ParticleSystem>();
+        StartCoroutine(RandomWait());
     }
 
     // Update is called once per frame
@@ -33,6 +38,17 @@ public class FireTrap : MonoBehaviour
             StartCoroutine(DamageOverTimePlayer(other));
         }
 
+    }
+
+    IEnumerator RandomWait()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(minWait, maxWait));
+            eff.Play();
+            yield return new WaitForSeconds(burnTime);
+            eff.Stop();
+        }
     }
 
     IEnumerator DamageOverTimePlayer(GameObject other)
