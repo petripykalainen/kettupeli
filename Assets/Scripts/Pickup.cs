@@ -80,6 +80,10 @@ public class Pickup : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SpeedBoost(5f);
                 break;
 
+            case 3:
+
+                break;
+
             default:
                 Debug.Log("Default case");
                 break;

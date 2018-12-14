@@ -9,10 +9,12 @@ public class health_pickup : MonoBehaviour
     private Inventory inventory;
     private PlayerHealth PlayerHealth;
     public GameObject healthEffect;
+    public GameObject bombSpawn;
     private ParticleSystem health;
     private GameObject test;
     private int whichSlot;
 
+    private int distance = 2;
     private AudioPlayer audio;
 
     private void Start()
@@ -92,6 +94,11 @@ public class health_pickup : MonoBehaviour
                     PlayerHealth.TakeDamage(-5);
                 }
                 audio.playBaconAudio();
+                Destroy(test);
+            }
+            else if (test.tag == "Bomb_image")
+            {
+                Instantiate(bombSpawn, player.transform.position - player.transform.forward * distance, Quaternion.identity); // spawnaa pelaajan taakse
                 Destroy(test);
             }
             //currentHealth += amount;
