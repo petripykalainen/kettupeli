@@ -149,3 +149,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupAudio: {fileID: 8300000, guid: 4e66dde6a567a324688987904c227cbb, type: 3}
   inventoryAudio: {fileID: 8300000, guid: 79d82989027eb884e8c71794c092186c, type: 3}
+  baconAudio: {fileID: 8300000, guid: ad464b636e5b6d2438f730097492e5e9, type: 3}
+  speedAudio: {fileID: 8300000, guid: 13f569ad00692e2419e635d29ceffa92, type: 3}

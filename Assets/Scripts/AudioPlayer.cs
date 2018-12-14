@@ -7,6 +7,8 @@ public class AudioPlayer : MonoBehaviour {
     private Inventory inventory;
     public AudioClip pickupAudio;
     public AudioClip inventoryAudio;
+    public AudioClip baconAudio;
+    public AudioClip speedAudio;
     private AudioSource source;
 
     // Use this for initialization
@@ -26,5 +28,13 @@ public class AudioPlayer : MonoBehaviour {
     public void playPickupAudio()
     {
         source.PlayOneShot(pickupAudio, 1f);
+    }
+    public void playBaconAudio()
+    {
+        source.PlayOneShot(baconAudio, 1f);
+    }
+    public void playSpeedAudio()
+    {
+        source.PlayOneShot(speedAudio, 1f);
     }
 }

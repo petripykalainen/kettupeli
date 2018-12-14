@@ -13,12 +13,16 @@ public class health_pickup : MonoBehaviour
     private GameObject test;
     private int whichSlot;
 
+    private AudioPlayer audio;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         health = player.transform.GetChild(1).GetComponent<ParticleSystem>();
         inventory = player.GetComponent<Inventory>();
         PlayerHealth = player.GetComponent<PlayerHealth>();
+
+        audio = GameObject.Find("audioManager").GetComponent<AudioPlayer>();
         //healthEffect.transform.parent = player.transform;
     }
 
@@ -87,6 +91,7 @@ public class health_pickup : MonoBehaviour
                     //PlayerHealth.healthSlider.value += 5;
                     PlayerHealth.TakeDamage(-5);
                 }
+                audio.playBaconAudio();
                 Destroy(test);
             }
             //currentHealth += amount;

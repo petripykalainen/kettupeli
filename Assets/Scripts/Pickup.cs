@@ -76,6 +76,7 @@ public class Pickup : MonoBehaviour
                 break;
 
             case 2:
+                audio.playSpeedAudio();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SpeedBoost(5f);
                 break;
 
