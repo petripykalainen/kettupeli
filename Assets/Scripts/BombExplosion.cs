@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BombExplosion : MonoBehaviour {
 
-    public float delay = 3f;
-    public float blastRadius = 5f;
-    public float explosionForce = 500f;
+    [SerializeField] public float delay = 3f;
+    [SerializeField] public float blastRadius = 5f;
+    [SerializeField] public float explosionForce = 500f;
 
     public GameObject explosionEffect;
 
     [SerializeField] int damage = 100;
 
-    float countdown;
+    [SerializeField]  float countdown;
     bool hasExploded = false;
 
 	// Use this for initialization

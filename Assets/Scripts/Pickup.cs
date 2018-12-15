@@ -13,10 +13,14 @@ public class Pickup : MonoBehaviour
     public int objectID;
     GameObject player;
     PlayerHealth playerHealth;
+    ItemSpawner powerSpawner;
+    ItemSpawner itemSpawner;
     
 
     private void Start()
     {
+        itemSpawner = GameObject.Find("ItemSpawner").GetComponent<ItemSpawner>();
+        powerSpawner = GameObject.Find("PowerSpawner").GetComponent<ItemSpawner>();
 
         //source = GetComponent<AudioSource>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -47,6 +51,7 @@ public class Pickup : MonoBehaviour
                     Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
                     StatUpdateOnPickUp(objectID);
                     audio.playPickupAudio();
+                    itemSpawner.itemSpawned = false;
                     Destroy(gameObject);
                     break;
                 }
@@ -88,6 +93,7 @@ public class Pickup : MonoBehaviour
                 Debug.Log("Default case");
                 break;
         }
+        powerSpawner.itemSpawned = false;
     }
 
 }

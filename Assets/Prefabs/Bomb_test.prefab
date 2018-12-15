@@ -96,12 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ce9c5bdd572b647915de1fd3a8f6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 3
-  blastRadius: 5
+  delay: 1.5
+  blastRadius: 30
   explosionForce: 500
   explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 2}
   damage: 100
+  countdown: 0
 --- !u!135 &135305858127596622
 SphereCollider:
   m_ObjectHideFlags: 1

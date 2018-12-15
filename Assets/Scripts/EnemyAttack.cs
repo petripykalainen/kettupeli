@@ -46,7 +46,7 @@ public class EnemyAttack : MonoBehaviour
     public void PlayAttackSFX()
     {
         int index = UnityEngine.Random.Range(0, hitSfx.Count - 1);
-        Debug.Log(hitSfx[index]);
+        //Debug.Log(hitSfx[index]);
         audioPlayer.PlayOneShot(hitSfx[index]);
     }
 }
