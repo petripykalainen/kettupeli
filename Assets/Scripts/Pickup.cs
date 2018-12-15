@@ -66,8 +66,11 @@ public class Pickup : MonoBehaviour
 
         else
         {
-            StatUpdateOnPickUp(objectID);
-            Destroy(gameObject);
+            if (other.CompareTag("Player")) // jotta viholliset eivät voi poimia poweruppeja pelaajan puolesta
+            {
+                StatUpdateOnPickUp(objectID);
+                Destroy(gameObject);
+            }
         }
     }
     public void StatUpdateOnPickUp(int objectID)

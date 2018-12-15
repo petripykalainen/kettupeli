@@ -99,6 +99,7 @@ public class health_pickup : MonoBehaviour
             else if (test.tag == "Bomb_image")
             {
                 Instantiate(bombSpawn, player.transform.position - player.transform.forward * distance, Quaternion.identity); // spawnaa pelaajan taakse
+                // ignite audio tapahtuu vasta BombExplosion scriptissä
                 Destroy(test);
             }
             //currentHealth += amount;

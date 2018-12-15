@@ -151,3 +151,5 @@ MonoBehaviour:
   inventoryAudio: {fileID: 8300000, guid: 79d82989027eb884e8c71794c092186c, type: 3}
   baconAudio: {fileID: 8300000, guid: ad464b636e5b6d2438f730097492e5e9, type: 3}
   speedAudio: {fileID: 8300000, guid: 13f569ad00692e2419e635d29ceffa92, type: 3}
+  igniteAudio: {fileID: 8300000, guid: cdc6db40af53dd54e805d69aa4bbb4a9, type: 3}
+  explosionAudio: {fileID: 8300000, guid: b67bbea78511d5f409694ae6b00a49cd, type: 3}

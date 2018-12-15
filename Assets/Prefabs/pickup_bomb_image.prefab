@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthEffect: {fileID: 0}
-  bombSpawn: {fileID: 1428379249130642, guid: 98ff49e646e8eed4e8b2fc7bf2eafe98, type: 2}
+  bombSpawn: {fileID: 1847359345211158, guid: 7c00909848fdfe140b138a50720d5206, type: 2}
 --- !u!114 &114424787314823968
 MonoBehaviour:
   m_ObjectHideFlags: 1

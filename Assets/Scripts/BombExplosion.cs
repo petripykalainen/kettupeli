@@ -8,7 +8,10 @@ public class BombExplosion : MonoBehaviour {
     [SerializeField] public float blastRadius = 5f;
     [SerializeField] public float explosionForce = 500f;
 
+    private AudioPlayer audio;
+
     public GameObject explosionEffect;
+    private ParticleSystem ignitionEffect;
 
     [SerializeField] int damage = 100;
 
@@ -17,7 +20,11 @@ public class BombExplosion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        audio = GameObject.Find("audioManager").GetComponent<AudioPlayer>();
         countdown = delay;
+        ignitionEffect = gameObject.transform.GetChild(0).GetComponent<ParticleSystem>();
+        ignitionEffect.Play();
+        audio.playIgniteAudio();
     }
 	
 	// Update is called once per frame
@@ -25,6 +32,7 @@ public class BombExplosion : MonoBehaviour {
         countdown -= Time.deltaTime;
         if(countdown <= 0f && !hasExploded)
         {
+            audio.stop(); // lopettaa igniten
             Explode();
             hasExploded = true;
         }
@@ -43,6 +51,11 @@ public class BombExplosion : MonoBehaviour {
             {
                 enem.TakeDamage(damage);
             }
+            PlayerHealth plr = nearbyObject.GetComponent<PlayerHealth>();
+            if (plr != null)
+            {
+                plr.TakeDamage(damage);
+            }
         }
 
         Collider[] collidersToMove = Physics.OverlapSphere(transform.position, blastRadius);
@@ -56,6 +69,8 @@ public class BombExplosion : MonoBehaviour {
             }
         }
 
+        audio.playExplosionAudio();
+        //source.PlayOneShot(explosionAudio, 1f);
         Destroy(gameObject);
     }
 }

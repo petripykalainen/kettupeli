@@ -94,7 +94,10 @@ public class Player : MonoBehaviour {
         trail.emitting = true;
         speedTimerActive = true;
         speedTimer = duration;
-        movementSpeed *= 2;
+        if (movementSpeed < 20f)
+        {
+            movementSpeed *= 2;
+        }
     }
 
     private void Move()

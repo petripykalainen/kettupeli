@@ -9,6 +9,9 @@ public class AudioPlayer : MonoBehaviour {
     public AudioClip inventoryAudio;
     public AudioClip baconAudio;
     public AudioClip speedAudio;
+    public AudioClip igniteAudio;
+    public AudioClip explosionAudio;
+
     private AudioSource source;
 
     // Use this for initialization
@@ -20,6 +23,11 @@ public class AudioPlayer : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void stop()
+    {
+        source.Stop();
+    }
 
     public void playInventoryAudio()
     {
@@ -36,5 +44,13 @@ public class AudioPlayer : MonoBehaviour {
     public void playSpeedAudio()
     {
         source.PlayOneShot(speedAudio, 1f);
+    }
+    public void playIgniteAudio()
+    {
+        source.PlayOneShot(igniteAudio, 1f);
+    }
+    public void playExplosionAudio()
+    {
+        source.PlayOneShot(explosionAudio, 1f);
     }
 }
