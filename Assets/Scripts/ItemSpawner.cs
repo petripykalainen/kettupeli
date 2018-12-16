@@ -28,7 +28,8 @@ public class ItemSpawner : MonoBehaviour {
 
     public void SpawnItem()
     {
-        int randomIndex = Random.Range(0, itemlist.Count - 1);
+        int randomIndex = Random.Range(0, itemlist.Count);
+        Debug.Log(randomIndex);
         Instantiate(
             itemlist[randomIndex],
             transform.position,

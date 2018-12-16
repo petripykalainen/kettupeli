@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GameObject.Find("weasel_final_textured").GetComponent<Animator>();
         currentHealth = startingHealth;
         //deathMessage.text = "";
     }

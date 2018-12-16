@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
     void Start ()
     {
         health = GetComponent<PlayerHealth>();
-        anim = GetComponent<Animator>();
+        anim = GameObject.Find("weasel_final_textured").GetComponent<Animator>();
         //Debug.Log("Playe???  " + player);
         //Debug.Log(weapon.name);
         rb = GetComponentInChildren<Rigidbody>();

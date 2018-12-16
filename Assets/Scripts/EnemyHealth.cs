@@ -34,12 +34,12 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (isDead)
-            return;
+        //if (isDead)
+        //    return;
         currentHealth -= amount;
         anim.SetTrigger("Hit");
         audioPlayer.PlayOneShot(hitSfx);
-        if (currentHealth <= 0){ Death(); }
+        if (currentHealth <= 0 && !isDead){ Death(); }
     }
 
 

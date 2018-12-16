@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -469,16 +469,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 1513273160}
-    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: damageImage
-      value: 
-      objectReference: {fileID: 1513273159}
     - target: {fileID: 114063253539436084, guid: 8be75665cbeb2fd49831e6da961bedf9,
         type: 2}
       propertyPath: slots.Array.data[0]
@@ -504,6 +494,16 @@ Prefab:
       propertyPath: slots.Array.data[4]
       value: 
       objectReference: {fileID: 440230747}
+    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1513273160}
+    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
+        type: 2}
+      propertyPath: damageImage
+      value: 
+      objectReference: {fileID: 1513273159}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be75665cbeb2fd49831e6da961bedf9, type: 2}
   m_IsPrefabAsset: 0
@@ -685,6 +685,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804e3b5dd000fd74a8814fc5f30be6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starimages:
+  - {fileID: 21300002, guid: e7142c9ff0f7a304abb7fb0a887f71f1, type: 3}
+  - {fileID: 21300004, guid: e7142c9ff0f7a304abb7fb0a887f71f1, type: 3}
+  - {fileID: 21300006, guid: e7142c9ff0f7a304abb7fb0a887f71f1, type: 3}
+  - {fileID: 21300008, guid: e7142c9ff0f7a304abb7fb0a887f71f1, type: 3}
+  - {fileID: 21300010, guid: e7142c9ff0f7a304abb7fb0a887f71f1, type: 3}
   score: 0
   totalScore: 0
   potentialScore: 0
@@ -907,6 +913,10 @@ Prefab:
     - target: {fileID: 4569283916150224, guid: ef125052071e97547804c35b85112c8e, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297654527346654, guid: ef125052071e97547804c35b85112c8e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef125052071e97547804c35b85112c8e, type: 2}

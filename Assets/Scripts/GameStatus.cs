@@ -49,9 +49,10 @@ public class GameStatus : MonoBehaviour {
 
     public void WinLevel()
     {
-        winText = " Winner is you \n score : " + FindObjectOfType<ScoreCounter>().score + 
-                  " \n TotalScore " + FindObjectOfType<ScoreCounter>().totalScore + 
-                  " \n PotentialScore " + FindObjectOfType<ScoreCounter>().potentialScore;
+        winText = " Winner is you \n score : " + FindObjectOfType<ScoreCounter>().score +
+                  " \n TotalScore " + FindObjectOfType<ScoreCounter>().totalScore;
+        //FindObjectOfType<ScoreCounter>().potentialScore;
+        FindObjectOfType<ScoreCounter>().PotentialScoreToStars();
         StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 3f));       
     }
 
