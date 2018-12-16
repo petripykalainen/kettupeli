@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
+    AudioSource audioPlayer;
+    [SerializeField] List<AudioClip> hitSFX;
+    [SerializeField] List<AudioClip> deathFX;
     public int startingHealth = 100;
     public const int maxHealth = 100;
     public int currentHealth;
@@ -21,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        audioPlayer = GetComponent<AudioSource>();
         anim = GameObject.Find("weasel_final_textured").GetComponent<Animator>();
         currentHealth = startingHealth;
         //deathMessage.text = "";
@@ -45,11 +50,18 @@ public class PlayerHealth : MonoBehaviour
     {
         int tempHealth = currentHealth;
         currentHealth -= amount;
-        if (currentHealth < tempHealth ) { damaged = true; }
+        if (currentHealth < tempHealth )
+        {
+            damaged = true;
+            int index = Random.Range(0, hitSFX.Count);
+            audioPlayer.PlayOneShot(hitSFX[index]);
+        }
         healthSlider.value = currentHealth;
         if (currentHealth > maxHealth) { currentHealth = maxHealth; }
         if (currentHealth <= 0 && !isDead)
         {
+            int index = Random.Range(0, deathFX.Count);
+            audioPlayer.PlayOneShot(deathFX[index]);
             Death();
         }
     }

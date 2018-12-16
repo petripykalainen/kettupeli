@@ -7,6 +7,9 @@ public class GameStatus : MonoBehaviour {
 
     sceneTransition sceneChanger;
     EnemySpawner[] listOfEnemies;
+    [SerializeField] AudioClip winSfx;
+    [SerializeField] AudioClip loseSfx;
+    AudioSource audioPlayer;
     PlayerHealth player;    
     [SerializeField] string winText = " Winner is you ";
     Text winMessage;
@@ -15,6 +18,7 @@ public class GameStatus : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        audioPlayer = GetComponent<AudioSource>();
         sceneChanger = GetComponent<sceneTransition>();
         winMessage = GameObject.Find("DeathMessage").GetComponent<Text>();
 
@@ -53,7 +57,8 @@ public class GameStatus : MonoBehaviour {
                   " \n TotalScore " + FindObjectOfType<ScoreCounter>().totalScore;
         //FindObjectOfType<ScoreCounter>().potentialScore;
         FindObjectOfType<ScoreCounter>().PotentialScoreToStars();
-        StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 3f));       
+        audioPlayer.PlayOneShot(winSfx);
+        StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 4f));       
     }
 
     IEnumerator LoadNextSceneWithDelayAndMessage(string messageText, float delay)
@@ -72,7 +77,8 @@ public class GameStatus : MonoBehaviour {
 
     public void LoseGame()
     {
-        StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 3f));
+        audioPlayer.PlayOneShot(loseSfx);
+        StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 4f));
     }
 
 }

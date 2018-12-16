@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     Rigidbody rb;
     [SerializeField] public float movementSpeed = 1.0f;
     PlayerHealth health;
+    PlayerAttack playerSlasher;
     Vector3 forward, right;
     public Transform camera;
     Animator anim;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        playerSlasher = GetComponent<PlayerAttack>();
         health = GetComponent<PlayerHealth>();
         anim = GameObject.Find("weasel_final_textured").GetComponent<Animator>();
         //Debug.Log("Playe???  " + player);
@@ -60,6 +62,7 @@ public class Player : MonoBehaviour {
                 {
                     anim.SetTrigger("attack_trigger");
                 }
+                playerSlasher.PlaySlashSFX();
             }
 
             if (speedTimerActive)

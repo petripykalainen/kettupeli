@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 
 public class PlayerAttack : MonoBehaviour
 {
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
+    [SerializeField] List<AudioClip> slashSounds;
+    AudioSource audioPlayer;
 
 	GameObject player;
     PlayerHealth playerHealth;
@@ -16,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
+        audioPlayer = GetComponent<AudioSource>();
 		player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
 
@@ -26,9 +30,17 @@ public class PlayerAttack : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            //PlaySlashSFX();
             other.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
-            Debug.Log(other.name);
+            //Debug.Log(other.name);
         }
+    }
+
+    public void PlaySlashSFX()
+    {
+        int index = UnityEngine.Random.Range(0, slashSounds.Count);
+        //Debug.Log(hitSfx[index]);
+        audioPlayer.PlayOneShot(slashSounds[index]);
     }
 
     /*

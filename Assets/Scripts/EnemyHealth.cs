@@ -10,7 +10,7 @@ public class EnemyHealth : MonoBehaviour
     float timeAlive;
     public int startingHealth = 100;
     public int currentHealth;
-    public bool isDead;
+    public bool isDead = false;
     public bool onFire = false;
     [SerializeField] AudioClip deathSfx, hitSfx;
     [SerializeField] List<AudioClip> meleeSfx;
@@ -34,8 +34,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        //if (isDead)
-        //    return;
+        if (isDead)
+            return;
         currentHealth -= amount;
         anim.SetTrigger("Hit");
         audioPlayer.PlayOneShot(hitSfx);

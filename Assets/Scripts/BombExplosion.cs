@@ -40,7 +40,7 @@ public class BombExplosion : MonoBehaviour {
 
     void Explode()
     {
-        Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        GameObject boom = Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
         Collider[] collidersToDestroy = Physics.OverlapSphere(transform.position, blastRadius);
 
@@ -71,6 +71,13 @@ public class BombExplosion : MonoBehaviour {
 
         audio.playExplosionAudio();
         //source.PlayOneShot(explosionAudio, 1f);
+        StartCoroutine(ClearObject(boom));
+    }
+
+    IEnumerator ClearObject(GameObject explosion)
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(explosion);
         Destroy(gameObject);
     }
 }
