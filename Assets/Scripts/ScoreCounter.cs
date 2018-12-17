@@ -61,6 +61,7 @@ public class ScoreCounter : MonoBehaviour {
         Debug.Log("RESETING TOTALSCORE");
         totalScore = 0;
         potentialScore = 0;
+        score = 0;
     }
 
     

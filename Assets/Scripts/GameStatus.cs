@@ -24,17 +24,22 @@ public class GameStatus : MonoBehaviour {
 
         if (sceneChanger.IsPlayScene())
         {
-            FindObjectOfType<ScoreCounter>().score = 0;
-            FindObjectOfType<ScoreCounter>().totalScore = 0;
+            FindObjectOfType<ScoreCounter>().ResetScore();
             Debug.Log("counting pigs and resetting scene scores");
             listOfEnemies = FindObjectsOfType<EnemySpawner>();
             CountEnemies(listOfEnemies);
             //FindObjectOfType<ScoreCounter>().ResetScore();
         }
-        else
+        if (sceneChanger.GetCurrentScene() == 2)
         {
             FindObjectOfType<ScoreCounter>().ResetTotalScore();
         }
+
+        if (sceneChanger.IsGameOver())
+        {
+            FinalResult();
+        }
+        
     }
 
     private void CountEnemies(EnemySpawner[] enemies)
@@ -85,6 +90,12 @@ public class GameStatus : MonoBehaviour {
     {
         audioPlayer.PlayOneShot(loseSfx);
         StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 4f));
+    }
+
+    public void FinalResult()
+    {
+        winText = " Winner is you \n score : " + FindObjectOfType<ScoreCounter>().totalScore;
+        winMessage.text = winText;
     }
 
 }
