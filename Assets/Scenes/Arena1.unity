@@ -490,16 +490,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 1513273160}
-    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: damageImage
-      value: 
-      objectReference: {fileID: 1513273159}
     - target: {fileID: 114063253539436084, guid: 8be75665cbeb2fd49831e6da961bedf9,
         type: 2}
       propertyPath: slots.Array.data[0]
@@ -525,6 +515,16 @@ Prefab:
       propertyPath: slots.Array.data[4]
       value: 
       objectReference: {fileID: 440230747}
+    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1513273160}
+    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
+        type: 2}
+      propertyPath: damageImage
+      value: 
+      objectReference: {fileID: 1513273159}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be75665cbeb2fd49831e6da961bedf9, type: 2}
   m_IsPrefabAsset: 0

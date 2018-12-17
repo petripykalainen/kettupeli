@@ -11,7 +11,7 @@ public class GameStatus : MonoBehaviour {
     [SerializeField] AudioClip loseSfx;
     AudioSource audioPlayer;
     PlayerHealth player;
-    [SerializeField] string winText = " Winner is you ";
+    public string winText;
     Text winMessage;
     int enemyCount = 0;
 
@@ -37,6 +37,7 @@ public class GameStatus : MonoBehaviour {
 
         if (sceneChanger.IsGameOver())
         {
+            Debug.Log("This should print in last scenes");
             FinalResult();
         }
         
@@ -94,8 +95,8 @@ public class GameStatus : MonoBehaviour {
 
     public void FinalResult()
     {
-        winText = " Winner is you \n score : " + FindObjectOfType<ScoreCounter>().totalScore;
-        winMessage.text = winText;
+        winMessage.text = "";
+        winMessage.text = "Final score : " + FindObjectOfType<ScoreCounter>().totalScore;
     }
 
 }
