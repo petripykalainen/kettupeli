@@ -99,7 +99,8 @@ public class health_pickup : MonoBehaviour
             }
             else if (test.tag == "Bomb_image")
             {
-                Instantiate(bombSpawn, player.transform.position - player.transform.forward * distance, Quaternion.identity); // spawnaa pelaajan taakse
+                Vector3 temp = new Vector3(0, bombSpawn.transform.position.y, 0);
+                Instantiate(bombSpawn, player.transform.position - player.transform.forward * distance + temp, Quaternion.identity); // spawnaa pelaajan taakse
                 // ignite audio tapahtuu vasta BombExplosion scriptissä
                 Destroy(test);
             }

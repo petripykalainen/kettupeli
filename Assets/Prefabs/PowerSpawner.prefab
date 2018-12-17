@@ -53,5 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemlist:
   - {fileID: 1773839417890894, guid: 695045fb8266f5c4ea95e986a310e456, type: 2}
+  - {fileID: 1722476231945534, guid: 4c84c70eefc802b44be7685af4dcb4fa, type: 2}
   spawnDelay: 5
   itemSpawned: 0
