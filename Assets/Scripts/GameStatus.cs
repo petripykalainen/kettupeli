@@ -10,8 +10,8 @@ public class GameStatus : MonoBehaviour {
     [SerializeField] AudioClip winSfx;
     [SerializeField] AudioClip loseSfx;
     AudioSource audioPlayer;
-    PlayerHealth player;    
-    [SerializeField] string winText = " Winner is you ";
+    PlayerHealth player;
+    public string winText;
     Text winMessage;
     int enemyCount = 0;
 
@@ -24,11 +24,23 @@ public class GameStatus : MonoBehaviour {
 
         if (sceneChanger.IsPlayScene())
         {
+            FindObjectOfType<ScoreCounter>().ResetScore();
+            Debug.Log("counting pigs and resetting scene scores");
             listOfEnemies = FindObjectsOfType<EnemySpawner>();
             CountEnemies(listOfEnemies);
-            FindObjectOfType<ScoreCounter>().score = 0;
-            FindObjectOfType<ScoreCounter>().potentialScore = 0;
+            //FindObjectOfType<ScoreCounter>().ResetScore();
         }
+        if (sceneChanger.GetCurrentScene() == 2)
+        {
+            FindObjectOfType<ScoreCounter>().ResetTotalScore();
+        }
+
+        if (sceneChanger.IsGameOver())
+        {
+            Debug.Log("This should print in last scenes");
+            FinalResult();
+        }
+        
     }
 
     private void CountEnemies(EnemySpawner[] enemies)
@@ -43,7 +55,7 @@ public class GameStatus : MonoBehaviour {
     public void ReduceEnemyCount()
     {
         enemyCount -= 1;
-        Debug.Log(enemyCount);
+        //Debug.Log(enemyCount);
         if (enemyCount <= 0 && !FindObjectOfType<PlayerHealth>().isDead)
         {
             WinLevel();
@@ -79,6 +91,12 @@ public class GameStatus : MonoBehaviour {
     {
         audioPlayer.PlayOneShot(loseSfx);
         StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 4f));
+    }
+
+    public void FinalResult()
+    {
+        winMessage.text = "";
+        winMessage.text = "Final score : " + FindObjectOfType<ScoreCounter>().totalScore;
     }
 
 }

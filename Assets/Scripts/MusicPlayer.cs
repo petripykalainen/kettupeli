@@ -34,7 +34,7 @@ public class MusicPlayer : MonoBehaviour {
 
     private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("BUILD INDEX: " + scene.buildIndex);
+        //Debug.Log("BUILD INDEX: " + scene.buildIndex);
         AudioClip audioClip = musicList[scene.buildIndex];
 
         //Debug.Log("Playing clip " + audioClip);

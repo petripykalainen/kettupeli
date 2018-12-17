@@ -62,7 +62,7 @@ public class health_pickup : MonoBehaviour
         //Instantiate(healthEffect, player.transform.position, Quaternion.Euler(-90, 0, 0));  // Quaternion.identity
         if (inventory.slots[w].transform.childCount > 0)    // checks if the inventory slot has any children
         {
-            Debug.Log(gameObject.tag);
+            //Debug.Log(gameObject.tag);
             test = inventory.slots[w].transform.GetChild(0).gameObject;
 
             if ((test.tag == "Potion_image") && (PlayerHealth.currentHealth < 100))

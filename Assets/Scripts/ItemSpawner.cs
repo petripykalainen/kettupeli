@@ -37,6 +37,6 @@ public class ItemSpawner : MonoBehaviour {
             itemlist[randomIndex].transform.rotation); //Quaternion.identity
         itemSpawned = true;
         timer = 0f;
-        Debug.Log("Spawned " + itemlist[randomIndex].name);
+        //Debug.Log("Spawned " + itemlist[randomIndex].name);
     }
 }

@@ -7,9 +7,9 @@ public class ScoreCounter : MonoBehaviour {
 
     [SerializeField] List<Sprite> starimages;
     GameObject stardisplay;
-    public int score;
-    public int totalScore;
-    public int potentialScore;
+    public int score = 0;
+    public int totalScore = 0;
+    public int potentialScore = 0;
     
     void Awake()
     {
@@ -21,6 +21,7 @@ public class ScoreCounter : MonoBehaviour {
         if (FindObjectsOfType(GetType()).Length > 1)
         {
             Destroy(gameObject);
+            Debug.Log("HALLOO");
         }
         else
         {
@@ -32,8 +33,6 @@ public class ScoreCounter : MonoBehaviour {
     void Start ()
     {
         stardisplay = GameObject.Find("StarDisplay");
-        score = 0;
-        totalScore = 0;
 	}	
 	// Update is called once per frame
 	void Update ()
@@ -43,10 +42,26 @@ public class ScoreCounter : MonoBehaviour {
 
     public void PotentialScoreToStars()
     {
+        stardisplay = GameObject.Find("StarDisplay");
         int index = Mathf.FloorToInt(score / (potentialScore / 5));
         var starpicture = stardisplay.GetComponent<Image>();
         starpicture.enabled = true;
         starpicture.sprite = starimages[index-1];
+    }
+
+    public void ResetScore()
+    {
+        Debug.Log("RESETING SCORE");
+        score = 0;
+        potentialScore = 0;
+    }
+
+    public void ResetTotalScore()
+    {
+        Debug.Log("RESETING TOTALSCORE");
+        totalScore = 0;
+        potentialScore = 0;
+        score = 0;
     }
 
     

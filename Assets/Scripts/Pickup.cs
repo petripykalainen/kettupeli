@@ -93,7 +93,7 @@ public class Pickup : MonoBehaviour
                 break;
 
             default:
-                Debug.Log("Default case");
+                //Debug.Log("Default case");
                 break;
         }
         powerSpawner.itemSpawned = false;

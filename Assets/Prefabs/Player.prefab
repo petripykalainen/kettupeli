@@ -2000,7 +2000,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &65491688254646848
 BoxCollider:
@@ -2241,6 +2241,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
   attackDamage: 110
+  slashSounds:
+  - {fileID: 8300000, guid: eb25628b45b90e347988e6ae1123f0c4, type: 3}
+  - {fileID: 8300000, guid: 6e17626bdee7bcb4b9b1a467b9cf2472, type: 3}
+  - {fileID: 8300000, guid: 7ac2ac70fa9789247baae838a0f9d39c, type: 3}
+  - {fileID: 8300000, guid: 4ce9bc3f077723147b5ca8ff2ca511bb, type: 3}
 --- !u!114 &114017736171121850
 MonoBehaviour:
   m_ObjectHideFlags: 1
