@@ -42,7 +42,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97c343b5e920fc4abc92be93b57f649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthEffect: {fileID: 0}
+  healthEffect: {fileID: 1183446625487678, guid: 01dbbc2fd2e05be439e5ba9f26779a50,
+    type: 2}
   bombSpawn: {fileID: 1847359345211158, guid: 7c00909848fdfe140b138a50720d5206, type: 2}
 --- !u!114 &114424787314823968
 MonoBehaviour:

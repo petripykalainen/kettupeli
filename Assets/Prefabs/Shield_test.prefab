@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1401159839023522}
+  m_RootGameObject: {fileID: 1790128938131360}
   m_IsPrefabAsset: 1
---- !u!1 &1401159839023522
+--- !u!1 &1790128938131360
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4969358443019698}
-  - component: {fileID: 33964585334991014}
-  - component: {fileID: 23997333474182698}
-  - component: {fileID: 64457087662457098}
-  - component: {fileID: 114823821502165818}
+  - component: {fileID: 4248300453395428}
+  - component: {fileID: 33644086345139062}
+  - component: {fileID: 23704331156516728}
+  - component: {fileID: 65628747776637466}
+  - component: {fileID: 114179886685894804}
   m_Layer: 0
-  m_Name: Bombcrate
-  m_TagString: Untagged
+  m_Name: Shield_test
+  m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4969358443019698
+--- !u!4 &4248300453395428
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1401159839023522}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_GameObject: {fileID: 1790128938131360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!23 &23997333474182698
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23704331156516728
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1401159839023522}
+  m_GameObject: {fileID: 1790128938131360}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: bd1557e6e9ffbda409fb28b83959436c, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,38 +78,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33964585334991014
+--- !u!33 &33644086345139062
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1401159839023522}
-  m_Mesh: {fileID: 4300000, guid: 2d622cd0f9dafa6468f4d1307e6eefbc, type: 3}
---- !u!64 &64457087662457098
-MeshCollider:
+  m_GameObject: {fileID: 1790128938131360}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65628747776637466
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1401159839023522}
+  m_GameObject: {fileID: 1790128938131360}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: -1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 2d622cd0f9dafa6468f4d1307e6eefbc, type: 3}
---- !u!114 &114823821502165818
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114179886685894804
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1401159839023522}
+  m_GameObject: {fileID: 1790128938131360}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3111332feff9a2d4bb67941708d4b028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 1460186440179602, guid: c9cd55207d5d17b45b8615eaae30b4eb, type: 2}
-  effect: {fileID: 1818026244126470, guid: 3aac586b8a582a049ab21a86935b88ee, type: 2}
-  objectID: 0
+  itemButton: {fileID: 0}
+  effect: {fileID: 0}
+  objectID: 3

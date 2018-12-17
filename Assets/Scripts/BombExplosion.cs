@@ -70,14 +70,7 @@ public class BombExplosion : MonoBehaviour {
         }
 
         audio.playExplosionAudio();
-        //source.PlayOneShot(explosionAudio, 1f);
-        StartCoroutine(ClearObject(boom));
-    }
-
-    IEnumerator ClearObject(GameObject explosion)
-    {
-        yield return new WaitForSeconds(1.5f);
-        Destroy(explosion);
         Destroy(gameObject);
+        //source.PlayOneShot(explosionAudio, 1f);
     }
 }

@@ -89,7 +89,7 @@ public class Pickup : MonoBehaviour
                 break;
 
             case 3:
-
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().ShieldActivation();
                 break;
 
             default:

@@ -30,10 +30,11 @@ public class ItemSpawner : MonoBehaviour {
     {
         int randomIndex = Random.Range(0, itemlist.Count);
         Debug.Log(randomIndex);
+        Vector3 temp = new Vector3(transform.position.x, itemlist[randomIndex].transform.position.y, transform.position.z);
         Instantiate(
             itemlist[randomIndex],
-            transform.position,
-            Quaternion.identity);
+            temp, //transform.position
+            itemlist[randomIndex].transform.rotation); //Quaternion.identity
         itemSpawned = true;
         timer = 0f;
         Debug.Log("Spawned " + itemlist[randomIndex].name);

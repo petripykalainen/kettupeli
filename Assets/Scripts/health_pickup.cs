@@ -28,7 +28,7 @@ public class health_pickup : MonoBehaviour
         //healthEffect.transform.parent = player.transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.GetKeyDown("1"))
         {
@@ -64,7 +64,8 @@ public class health_pickup : MonoBehaviour
         {
             Debug.Log(gameObject.tag);
             test = inventory.slots[w].transform.GetChild(0).gameObject;
-            if((test.tag == "Potion_image") && (PlayerHealth.currentHealth < 100))
+
+            if ((test.tag == "Potion_image") && (PlayerHealth.currentHealth < 100))
             {
                 health.Play();
                 if(PlayerHealth.currentHealth >= 80)
