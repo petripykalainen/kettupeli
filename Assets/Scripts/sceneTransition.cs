@@ -48,8 +48,10 @@ public class sceneTransition : MonoBehaviour {
 
     public bool IsPlayScene()
     {
-        int secondLastIndex = SceneManager.sceneCountInBuildSettings - 2;
+        int secondLastIndex = SceneManager.sceneCountInBuildSettings - 1;
         int currentScene = SceneManager.GetActiveScene().buildIndex;
-        return currentScene < secondLastIndex && currentScene > 1;
+        //Debug.Log(currentScene);
+        //Debug.Log(currentScene < secondLastIndex && currentScene > 1);
+        return currentScene > 1;
     }
 }

@@ -39,18 +39,21 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= amount;
         anim.SetTrigger("Hit");
         audioPlayer.PlayOneShot(hitSfx);
-        if (currentHealth <= 0 && !isDead){ Death(); }
+        if (currentHealth < 0)
+        {
+            Death();
+        }
     }
 
 
 
     public void Death()
     {
+        FindObjectOfType<ScoreCounter>().score += ActualScore(scoreForKill);
+        FindObjectOfType<ScoreCounter>().totalScore += ActualScore(scoreForKill);
         FindObjectOfType<GameStatus>().ReduceEnemyCount();
         isDead = true;
         audioPlayer.PlayOneShot(deathSfx);
-        FindObjectOfType<ScoreCounter>().score += ActualScore(scoreForKill);
-        FindObjectOfType<ScoreCounter>().totalScore += ActualScore(scoreForKill);
         anim.SetBool("IsDead", isDead);
         StartCoroutine(RemoveBody());
     }
@@ -80,8 +83,8 @@ public class EnemyHealth : MonoBehaviour
     public int ActualScore(int score)
     {
         // jos muutatte kertojia, muuttakaa potentialscore start funktiossa
-        if (timeAlive < 2f){ score *= 3; }
-        else if (timeAlive < 5f) { score *= 2; }
+        if (timeAlive < 3.5f){ score *= 3; }
+        else if (timeAlive < 6f) { score *= 2; }
         else if (timeAlive < 10f) { score /= 2; }
         return score;
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -458,11 +458,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114003711055336564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: slashSounds.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4243647688663974, guid: 8be75665cbeb2fd49831e6da961bedf9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 5.278214
@@ -495,6 +490,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1513273160}
+    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
+        type: 2}
+      propertyPath: damageImage
+      value: 
+      objectReference: {fileID: 1513273159}
     - target: {fileID: 114063253539436084, guid: 8be75665cbeb2fd49831e6da961bedf9,
         type: 2}
       propertyPath: slots.Array.data[0]
@@ -520,36 +525,6 @@ Prefab:
       propertyPath: slots.Array.data[4]
       value: 
       objectReference: {fileID: 440230747}
-    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 1513273160}
-    - target: {fileID: 114403488066416564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: damageImage
-      value: 
-      objectReference: {fileID: 1513273159}
-    - target: {fileID: 114003711055336564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: slashSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: eb25628b45b90e347988e6ae1123f0c4, type: 3}
-    - target: {fileID: 114003711055336564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: slashSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 6e17626bdee7bcb4b9b1a467b9cf2472, type: 3}
-    - target: {fileID: 114003711055336564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: slashSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 7ac2ac70fa9789247baae838a0f9d39c, type: 3}
-    - target: {fileID: 114003711055336564, guid: 8be75665cbeb2fd49831e6da961bedf9,
-        type: 2}
-      propertyPath: slashSounds.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 4ce9bc3f077723147b5ca8ff2ca511bb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be75665cbeb2fd49831e6da961bedf9, type: 2}
   m_IsPrefabAsset: 0
@@ -851,6 +826,10 @@ Prefab:
     - target: {fileID: 224105031290660932, guid: 67de214b59e87664aa817c46d54e9bb3,
         type: 2}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313671631741858, guid: 67de214b59e87664aa817c46d54e9bb3, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

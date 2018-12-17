@@ -29,13 +29,13 @@ public class ItemSpawner : MonoBehaviour {
     public void SpawnItem()
     {
         int randomIndex = Random.Range(0, itemlist.Count);
-        Debug.Log(randomIndex);
+        //Debug.Log(randomIndex);
         Instantiate(
             itemlist[randomIndex],
             transform.position,
             Quaternion.identity);
         itemSpawned = true;
         timer = 0f;
-        Debug.Log("Spawned " + itemlist[randomIndex].name);
+        //Debug.Log("Spawned " + itemlist[randomIndex].name);
     }
 }

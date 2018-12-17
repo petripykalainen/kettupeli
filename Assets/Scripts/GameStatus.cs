@@ -10,7 +10,7 @@ public class GameStatus : MonoBehaviour {
     [SerializeField] AudioClip winSfx;
     [SerializeField] AudioClip loseSfx;
     AudioSource audioPlayer;
-    PlayerHealth player;    
+    PlayerHealth player;
     [SerializeField] string winText = " Winner is you ";
     Text winMessage;
     int enemyCount = 0;
@@ -24,10 +24,16 @@ public class GameStatus : MonoBehaviour {
 
         if (sceneChanger.IsPlayScene())
         {
+            FindObjectOfType<ScoreCounter>().score = 0;
+            FindObjectOfType<ScoreCounter>().totalScore = 0;
+            Debug.Log("counting pigs and resetting scene scores");
             listOfEnemies = FindObjectsOfType<EnemySpawner>();
             CountEnemies(listOfEnemies);
-            FindObjectOfType<ScoreCounter>().score = 0;
-            FindObjectOfType<ScoreCounter>().potentialScore = 0;
+            //FindObjectOfType<ScoreCounter>().ResetScore();
+        }
+        else
+        {
+            FindObjectOfType<ScoreCounter>().ResetTotalScore();
         }
     }
 
@@ -43,7 +49,7 @@ public class GameStatus : MonoBehaviour {
     public void ReduceEnemyCount()
     {
         enemyCount -= 1;
-        Debug.Log(enemyCount);
+        //Debug.Log(enemyCount);
         if (enemyCount <= 0 && !FindObjectOfType<PlayerHealth>().isDead)
         {
             WinLevel();
