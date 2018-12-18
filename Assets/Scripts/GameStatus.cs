@@ -15,6 +15,8 @@ public class GameStatus : MonoBehaviour {
     Text winMessage;
     int enemyCount = 0;
     Image background;
+    public bool levelWon = false;
+    public bool levelLost = false;
 
     // Use this for initialization
     void Start ()
@@ -60,6 +62,7 @@ public class GameStatus : MonoBehaviour {
         //Debug.Log(enemyCount);
         if (enemyCount <= 0 && !FindObjectOfType<PlayerHealth>().isDead)
         {
+            levelWon = true;
             WinLevel();
         }
         //Debug.Log("removing one enemy from list. Total amount of enemies remaining: " + enemyCount);
@@ -67,14 +70,17 @@ public class GameStatus : MonoBehaviour {
 
     public void WinLevel()
     {
-        background.enabled = true;
-        winText = " Winner is you \n score : " + FindObjectOfType<ScoreCounter>().score +
-                  " \n TotalScore " + FindObjectOfType<ScoreCounter>().totalScore;
-        //FindObjectOfType<ScoreCounter>().potentialScore;
-        FindObjectOfType<ScoreCounter>().PotentialScoreToStars();
-        audioPlayer.PlayOneShot(winSfx);
-        StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 4f));       
-    }
+        if (!levelLost)
+        {
+            background.enabled = true;
+            winText = " Winner is you \n score : " + FindObjectOfType<ScoreCounter>().score +
+                        " \n TotalScore " + FindObjectOfType<ScoreCounter>().totalScore;
+            //FindObjectOfType<ScoreCounter>().potentialScore;
+            FindObjectOfType<ScoreCounter>().PotentialScoreToStars();
+            audioPlayer.PlayOneShot(winSfx);
+            StartCoroutine(LoadNextSceneWithDelayAndMessage(winText, 4f));
+        }
+    }   
 
     IEnumerator LoadNextSceneWithDelayAndMessage(string messageText, float delay)
     {
@@ -92,9 +98,13 @@ public class GameStatus : MonoBehaviour {
 
     public void LoseGame()
     {
-        background.enabled = true;
-        audioPlayer.PlayOneShot(loseSfx);
-        StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 4f));
+        if (!levelWon)
+        {
+            background.enabled = true;
+            audioPlayer.PlayOneShot(loseSfx);
+            StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 4f));
+        }
+       
     }
 
     public void FinalResult()

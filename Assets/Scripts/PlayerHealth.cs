@@ -93,7 +93,8 @@ public class PlayerHealth : MonoBehaviour
         anim.SetBool("isDead", isDead);
 
         var asd = FindObjectOfType<GameStatus>();
-        Debug.Log(asd);
+        //Debug.Log(asd);
+        asd.levelLost = true;
         asd.LoseGame();
         //deathMessage.text = "You have died!";
     }

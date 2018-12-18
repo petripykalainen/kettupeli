@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
 
     Rigidbody rb;
     [SerializeField] public float movementSpeed = 1.0f;
+    [SerializeField] float attackTimer = 0.5f;
+    public float timer = 0f;
     PlayerHealth health;
     PlayerAttack playerSlasher;
     Vector3 forward, right;
@@ -41,7 +43,7 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate ()
     {
-
+        timer += Time.deltaTime;
         isMoving = Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0;
         anim.SetBool("isMoving", isMoving);
 
@@ -52,7 +54,7 @@ public class Player : MonoBehaviour {
                 Move();
                 //Debug.Log("Player Move");
             }
-            if (Input.GetKeyUp("space"))
+            if (Input.GetKeyUp("space") && (timer >= attackTimer))
             {
                 if (isMoving)
                 {
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour {
                 {
                     anim.SetTrigger("attack_trigger");
                 }
+                timer = 0f;
                 playerSlasher.PlaySlashSFX();
             }
 
