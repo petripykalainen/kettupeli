@@ -48,10 +48,10 @@ public class Pickup : MonoBehaviour
                 { // check whether the slot is EMPTY
                     Instantiate(effect, transform.position, Quaternion.identity);
                     inventory.items[i] = 1; // makes sure that the slot is now considered FULL
+                    itemSpawner.itemSpawned = false;
                     Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
                     StatUpdateOnPickUp(objectID);
                     audio.playPickupAudio();
-                    itemSpawner.itemSpawned = false;
                     Destroy(gameObject);
                     break;
                 }
@@ -79,16 +79,17 @@ public class Pickup : MonoBehaviour
         switch (objectID)
         {
             case 1:
-
                 playerHealth.TakeDamage(-20);
                 break;
 
             case 2:
                 audio.playSpeedAudio();
+                powerSpawner.itemSpawned = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SpeedBoost(5f);
                 break;
 
             case 3:
+                powerSpawner.itemSpawned = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().ShieldActivation();
                 break;
 
@@ -96,7 +97,6 @@ public class Pickup : MonoBehaviour
                 //Debug.Log("Default case");
                 break;
         }
-        powerSpawner.itemSpawned = false;
     }
 
 }

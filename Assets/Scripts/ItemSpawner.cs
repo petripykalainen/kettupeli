@@ -16,7 +16,7 @@ public class ItemSpawner : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
         timer += Time.deltaTime;
         //Debug.Log(timer);

@@ -599,6 +599,21 @@ Prefab:
       propertyPath: slots.Array.data[4]
       value: 
       objectReference: {fileID: 440230747}
+    - target: {fileID: 54138394626532922, guid: 8be75665cbeb2fd49831e6da961bedf9,
+        type: 2}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54138394626532922, guid: 8be75665cbeb2fd49831e6da961bedf9,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54138394626532922, guid: 8be75665cbeb2fd49831e6da961bedf9,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be75665cbeb2fd49831e6da961bedf9, type: 2}
   m_IsPrefabAsset: 0
