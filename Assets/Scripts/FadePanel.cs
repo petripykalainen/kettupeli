@@ -9,17 +9,18 @@ public class FadePanel : MonoBehaviour {
     GameObject playButton, quitButton;
     public Image fadePanel;
     public Color currentColor = Color.black;
-    public Color buttonColor;
+    //public Color buttonColor;
 
 	// Use this for initialization
 	void Start ()
     {
         fadePanel = GetComponent<Image>();
-        playButton = GameObject.Find("PlayText");
-        quitButton = GameObject.Find("QuitText");
-        buttonColor = playButton.GetComponent<Text>().color;
-        playButton.GetComponent<Text>().color = buttonColor - buttonColor;
-        quitButton.GetComponent<Text>().color = buttonColor - buttonColor;
+        fadePanel.enabled = true;
+        //playButton = GameObject.Find("PlayText");
+        //quitButton = GameObject.Find("QuitText");
+        //buttonColor = playButton.GetComponent<Text>().color;
+        //playButton.GetComponent<Text>().color = buttonColor - buttonColor;
+        //quitButton.GetComponent<Text>().color = buttonColor - buttonColor;
     }
 	
 	// Update is called once per frame
@@ -29,10 +30,10 @@ public class FadePanel : MonoBehaviour {
         {
             float change = Time.deltaTime / fadeInTime;
             currentColor.a -= change;
-            buttonColor.a += change;
+            //buttonColor.a += change;
             fadePanel.color = currentColor;
-            playButton.GetComponent<Text>().color = buttonColor;
-            quitButton.GetComponent<Text>().color = buttonColor;
+            //playButton.GetComponent<Text>().color = buttonColor;
+            //quitButton.GetComponent<Text>().color = buttonColor;
 
         }
         else

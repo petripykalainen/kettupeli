@@ -52,7 +52,7 @@ public class sceneTransition : MonoBehaviour {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         //Debug.Log(currentScene);
         //Debug.Log(currentScene < secondLastIndex && currentScene > 1);
-        return currentScene > 1;
+        return currentScene > 2;
     }
 
     public bool IsGameOver()

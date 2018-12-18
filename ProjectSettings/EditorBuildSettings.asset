@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SplashScreen.unity
     guid: 50f6ea12bcf6e6948a6ba1b3642c4804
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 54b7f7ceb5b8f404e9ff2b2af276272b
+    path: Assets/Scenes/MenuScene1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene1.unity
+    guid: 2ab30d6b3b8f7234ebdd329205db9d99
   - enabled: 1
     path: Assets/Scenes/Arena1.unity
     guid: 06d27a946f03d864a9fe5a6322de023c
