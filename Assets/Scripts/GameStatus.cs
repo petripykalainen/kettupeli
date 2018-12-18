@@ -14,10 +14,12 @@ public class GameStatus : MonoBehaviour {
     public string winText;
     Text winMessage;
     int enemyCount = 0;
+    Image background;
 
     // Use this for initialization
     void Start ()
     {
+        background = GameObject.Find("MessageBackground").GetComponent<Image>();
         audioPlayer = GetComponent<AudioSource>();
         sceneChanger = GetComponent<sceneTransition>();
         winMessage = GameObject.Find("DeathMessage").GetComponent<Text>();
@@ -65,6 +67,7 @@ public class GameStatus : MonoBehaviour {
 
     public void WinLevel()
     {
+        background.enabled = true;
         winText = " Winner is you \n score : " + FindObjectOfType<ScoreCounter>().score +
                   " \n TotalScore " + FindObjectOfType<ScoreCounter>().totalScore;
         //FindObjectOfType<ScoreCounter>().potentialScore;
@@ -89,12 +92,14 @@ public class GameStatus : MonoBehaviour {
 
     public void LoseGame()
     {
+        background.enabled = true;
         audioPlayer.PlayOneShot(loseSfx);
         StartCoroutine(LoadGameOverScreenWithDelayAndMessage("You have just dieded", 4f));
     }
 
     public void FinalResult()
     {
+        background.enabled = true;
         winMessage.text = "";
         winMessage.text = "Final score : " + FindObjectOfType<ScoreCounter>().totalScore;
     }

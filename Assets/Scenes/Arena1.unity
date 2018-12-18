@@ -815,7 +815,19 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d313ca7d8a43f1b49af784377a51733a, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1513273158
+--- !u!114 &1513273159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114198550295505958, guid: 67de214b59e87664aa817c46d54e9bb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1846424828}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1513273160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114265096802448394, guid: 67de214b59e87664aa817c46d54e9bb3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1846424828}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1001 &1846424828
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -922,25 +934,9 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1313671631741858, guid: 67de214b59e87664aa817c46d54e9bb3, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67de214b59e87664aa817c46d54e9bb3, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &1513273159 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114198550295505958, guid: 67de214b59e87664aa817c46d54e9bb3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1513273158}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &1513273160 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114265096802448394, guid: 67de214b59e87664aa817c46d54e9bb3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1513273158}
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1903628104
 Prefab:
   m_ObjectHideFlags: 0
