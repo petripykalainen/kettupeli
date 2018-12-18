@@ -6,7 +6,7 @@ public class Pickup : MonoBehaviour
 {
 
     private Inventory inventory;
-    private AudioPlayer audio;
+    private AudioPlayer audioPickup;
     private AudioSource source;
     public GameObject itemButton;
     public GameObject effect;
@@ -24,7 +24,7 @@ public class Pickup : MonoBehaviour
 
         //source = GetComponent<AudioSource>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        audio = GameObject.Find("audioManager").GetComponent<AudioPlayer>();
+        audioPickup = GameObject.Find("audioManager").GetComponent<AudioPlayer>();
         source = GetComponent<AudioSource>();
         
         player = GameObject.FindGameObjectWithTag("Player");
@@ -48,17 +48,21 @@ public class Pickup : MonoBehaviour
                 { // check whether the slot is EMPTY
                     Instantiate(effect, transform.position, Quaternion.identity);
                     inventory.items[i] = 1; // makes sure that the slot is now considered FULL
-                    itemSpawner.itemSpawned = false;
                     Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
-                    StatUpdateOnPickUp(objectID);
-                    audio.playPickupAudio();
+                    audioPickup.playPickupAudio();
+                    //itemSpawner.timer -= itemSpawner.spawnDelay;
+                    if(itemButton.name != "pickup_bacon_image")
+                    {
+                        itemSpawner.timer = 0f;
+                        itemSpawner.itemSpawned = false;
+                    }
                     Destroy(gameObject);
                     break;
                 }
                 if (i == inventory.items.Length - 1 && inventory.items[i] == 1)
                 {
                     //source.PlayOneShot(audio.inventoryAudio, 1f);
-                    audio.playInventoryAudio();
+                    audioPickup.playInventoryAudio();
                     //Debug.Log("Haista paska");
                 }
             }
@@ -69,6 +73,9 @@ public class Pickup : MonoBehaviour
             if (other.CompareTag("Player")) // jotta viholliset eivät voi poimia poweruppeja pelaajan puolesta
             {
                 StatUpdateOnPickUp(objectID);
+                //powerSpawner.timer -= powerSpawner.spawnDelay;
+                powerSpawner.timer = 0f;
+                powerSpawner.itemSpawned = false;
                 Destroy(gameObject);
             }
         }
@@ -83,13 +90,11 @@ public class Pickup : MonoBehaviour
                 break;
 
             case 2:
-                audio.playSpeedAudio();
-                powerSpawner.itemSpawned = false;
+                audioPickup.playSpeedAudio();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SpeedBoost(5f);
                 break;
 
             case 3:
-                powerSpawner.itemSpawned = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().ShieldActivation();
                 break;
 

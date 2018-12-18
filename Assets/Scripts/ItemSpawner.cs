@@ -5,8 +5,8 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour {
 
     [SerializeField] List<GameObject> itemlist;
-    [SerializeField] float spawnDelay = 10f;
-    float timer = 0f;
+    [SerializeField] public float spawnDelay = 10f;
+    public float timer = 0f;
     public bool itemSpawned = false;
 
 	// Use this for initialization
@@ -19,8 +19,11 @@ public class ItemSpawner : MonoBehaviour {
 	void FixedUpdate ()
     {
         timer += Time.deltaTime;
-        //Debug.Log(timer);
-        if (!itemSpawned && timer >= spawnDelay)
+        /*if(gameObject.name == "ItemSpawner")
+        {
+            Debug.Log("TIME ALLTIME: " + timer);
+        }*/
+        if (!itemSpawned && (timer >= spawnDelay))
         {
             SpawnItem();
         }
@@ -29,14 +32,14 @@ public class ItemSpawner : MonoBehaviour {
     public void SpawnItem()
     {
         int randomIndex = Random.Range(0, itemlist.Count);
-        Debug.Log(randomIndex);
+        //Debug.Log(randomIndex);
         Vector3 temp = new Vector3(transform.position.x, itemlist[randomIndex].transform.position.y, transform.position.z);
         Instantiate(
             itemlist[randomIndex],
             temp, //transform.position
             itemlist[randomIndex].transform.rotation); //Quaternion.identity
+
+        //timer -= spawnDelay;
         itemSpawned = true;
-        timer = 0f;
-        //Debug.Log("Spawned " + itemlist[randomIndex].name);
     }
 }

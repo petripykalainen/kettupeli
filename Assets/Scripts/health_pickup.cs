@@ -15,7 +15,7 @@ public class health_pickup : MonoBehaviour
     private int whichSlot;
 
     private int distance = 2;
-    private AudioPlayer audio;
+    private AudioPlayer audioUseItem;
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class health_pickup : MonoBehaviour
         inventory = player.GetComponent<Inventory>();
         PlayerHealth = player.GetComponent<PlayerHealth>();
 
-        audio = GameObject.Find("audioManager").GetComponent<AudioPlayer>();
+        audioUseItem = GameObject.Find("audioManager").GetComponent<AudioPlayer>();
         //healthEffect.transform.parent = player.transform;
     }
 
@@ -93,7 +93,7 @@ public class health_pickup : MonoBehaviour
                     //PlayerHealth.healthSlider.value += 5;
                     PlayerHealth.TakeDamage(-5);
                 }
-                audio.playBaconAudio();
+                audioUseItem.playBaconAudio();
                 Destroy(test);
             }
             else if (test.tag == "Bomb_image")
