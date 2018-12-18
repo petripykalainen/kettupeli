@@ -153,3 +153,4 @@ MonoBehaviour:
   speedAudio: {fileID: 8300000, guid: 13f569ad00692e2419e635d29ceffa92, type: 3}
   igniteAudio: {fileID: 8300000, guid: cdc6db40af53dd54e805d69aa4bbb4a9, type: 3}
   explosionAudio: {fileID: 8300000, guid: b67bbea78511d5f409694ae6b00a49cd, type: 3}
+  shieldActiveAudio: {fileID: 8300000, guid: e2e92d62914d8124180e1aa73a59e000, type: 3}

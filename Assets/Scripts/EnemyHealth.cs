@@ -29,6 +29,10 @@ public class EnemyHealth : MonoBehaviour
     }
     private void Update()
     {
+        if (transform.position.y < -20 && !isDead)
+        {
+            TakeDamage(startingHealth);
+        }
         timeAlive += Time.deltaTime;
     }
 

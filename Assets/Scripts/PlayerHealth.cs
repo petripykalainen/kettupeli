@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class PlayerHealth : MonoBehaviour
 {
     AudioSource audioPlayer;
+    public AudioClip shieldAudio;
     [SerializeField] List<AudioClip> hitSFX;
     [SerializeField] List<AudioClip> deathFX;
     public int startingHealth = 100;
@@ -44,6 +45,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        if(transform.position.y < -20 && !isDead)
+        {
+            TakeDamage(maxHealth);
+        }
         if (damaged && currentHealth > 0)
         {
             damageImage.color = flashColour;
@@ -96,6 +101,7 @@ public class PlayerHealth : MonoBehaviour
     public void ShieldActivation()
     {
         activeShield = true;
+        audioPlayer.PlayOneShot(shieldAudio, 1f);
         shield_top.Play();
         shield_bot.Play();
         Debug.Log("shield active :o");
