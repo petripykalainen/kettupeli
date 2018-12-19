@@ -376,6 +376,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   timeBetweenAttacks: 0.5
-  minWait: 1
+  minWait: 3
   maxWait: 5
   spinTime: 3
