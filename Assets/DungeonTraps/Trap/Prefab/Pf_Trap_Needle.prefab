@@ -232,5 +232,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 25
-  maxWait: 5
+  maxWait: 3
   minWait: 1

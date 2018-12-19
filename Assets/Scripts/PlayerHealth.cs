@@ -38,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
         shield_top = shield_effects.transform.GetChild(0).GetComponent<ParticleSystem>();
         shield_bot = shield_effects.transform.GetChild(1).GetComponent<ParticleSystem>();
         currentHealth = startingHealth;
+        healthSlider.value = currentHealth;
 
         //deathMessage.text = "";
     }
@@ -45,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if(transform.position.y < -20 && !isDead)
+        if (transform.position.y < -20 && !isDead)
         {
             TakeDamage(maxHealth);
         }
@@ -81,6 +82,14 @@ public class PlayerHealth : MonoBehaviour
                 audioPlayer.PlayOneShot(deathFX[index]);
                 Death();
             }
+        }
+    }
+
+    public void HealPlayer(int amount)
+    {
+        {
+            currentHealth += amount;
+            healthSlider.value = currentHealth;
         }
     }
 

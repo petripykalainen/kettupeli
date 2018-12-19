@@ -4698,7 +4698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237e5889242378b4aba953972f2fd562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 15
   tickAmount: 4
   timeBetweenTicks: 1
   minWait: 1

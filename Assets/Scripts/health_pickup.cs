@@ -67,7 +67,7 @@ public class health_pickup : MonoBehaviour
             if ((test.tag == "Potion_image") && (PlayerHealth.currentHealth < 100))
             {
                 health.Play();
-                if(PlayerHealth.currentHealth >= 80)
+                if (PlayerHealth.currentHealth >= 80)
                 {
                     PlayerHealth.currentHealth = PlayerHealth.maxHealth;
                     PlayerHealth.healthSlider.value = PlayerHealth.maxHealth;
@@ -76,7 +76,7 @@ public class health_pickup : MonoBehaviour
                 {
                     //PlayerHealth.currentHealth += 20;
                     //PlayerHealth.healthSlider.value += 20;
-                    PlayerHealth.TakeDamage(-20);
+                    PlayerHealth.HealPlayer(20);
                 }
                 Destroy(test);
             }
@@ -91,7 +91,7 @@ public class health_pickup : MonoBehaviour
                 {
                     //PlayerHealth.currentHealth += 5;
                     //PlayerHealth.healthSlider.value += 5;
-                    PlayerHealth.TakeDamage(-5);
+                    PlayerHealth.HealPlayer(5);
                 }
                 audioUseItem.playBaconAudio();
                 Destroy(test);
