@@ -11,6 +11,7 @@ public class AudioPlayer : MonoBehaviour {
     public AudioClip speedAudio;
     public AudioClip igniteAudio;
     public AudioClip explosionAudio;
+    public AudioClip damageAudio;
 
     private AudioSource source;
 
@@ -52,5 +53,9 @@ public class AudioPlayer : MonoBehaviour {
     public void playExplosionAudio()
     {
         source.PlayOneShot(explosionAudio, 1f);
+    }
+    public void playDamageAudio()
+    {
+        source.PlayOneShot(damageAudio, 1f);
     }
 }

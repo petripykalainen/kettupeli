@@ -162,3 +162,5 @@ MonoBehaviour:
   winSfx: {fileID: 8300000, guid: 98c2ab72ee5c2d241b4b2402c67d6ff1, type: 3}
   loseSfx: {fileID: 8300000, guid: 07f2b8fda9cdaaf4c9752c4561248e20, type: 3}
   winText: ' Winner is you'
+  levelWon: 0
+  levelLost: 0

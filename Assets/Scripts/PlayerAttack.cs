@@ -7,9 +7,11 @@ public class PlayerAttack : MonoBehaviour
 {
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
+    public bool damageIncrease = false;
     [SerializeField] List<AudioClip> slashSounds;
     AudioSource audioPlayer;
 
+    GameObject weaponEffect;
 	GameObject player;
     PlayerHealth playerHealth;
 
@@ -19,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
+        weaponEffect = GameObject.Find("SwordFlameEffect");
         audioPlayer = GetComponent<AudioSource>();
 		player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -32,6 +35,13 @@ public class PlayerAttack : MonoBehaviour
         {
             //PlaySlashSFX();
             other.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            if (damageIncrease)
+            {
+                if (other.CompareTag("Enemy") && !other.GetComponent<EnemyHealth>().onFire)
+                {
+                    StartCoroutine(DamageOverTime(other.gameObject));
+                }
+            }
             //Debug.Log(other.name);
         }
     }
@@ -43,6 +53,37 @@ public class PlayerAttack : MonoBehaviour
         audioPlayer.PlayOneShot(slashSounds[index]);
     }
 
+    public void DamageBoost()
+    {
+        damageIncrease = true;
+        weaponEffect.GetComponentInChildren<ParticleSystem>().Play();
+        StartCoroutine(DamageBoostDeactivate());
+    }
+
+    IEnumerator DamageOverTime(GameObject other)
+    {
+        other.GetComponent<EnemyHealth>().onFire = true;
+        int currentCount = 0;
+        ParticleSystem fire = other.GetComponentInChildren<ParticleSystem>();
+        fire.Play();
+        while (currentCount <= 4)
+        {
+            other.GetComponent<EnemyHealth>().TakeDamage(attackDamage - 5);
+            yield return new WaitForSeconds(1.0f);
+            //fire.Stop();
+            currentCount++;
+        }
+        other.GetComponent<EnemyHealth>().onFire = false;
+    }
+
+    IEnumerator DamageBoostDeactivate()
+    {
+        //Debug.Log(anim.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+        //Debug.Log("Removing body in " + deathDelay + " seconds");
+        yield return new WaitForSeconds(5f);
+        damageIncrease = false;
+        weaponEffect.GetComponentInChildren<ParticleSystem>().Stop();
+    }
     /*
     void Attack()
     {

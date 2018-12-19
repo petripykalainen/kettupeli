@@ -86,7 +86,8 @@ public class Pickup : MonoBehaviour
         switch (objectID)
         {
             case 1:
-                playerHealth.TakeDamage(-20);
+                audioPickup.playDamageAudio();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>().DamageBoost();
                 break;
 
             case 2:
