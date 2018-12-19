@@ -29,7 +29,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOverDeath.unity
     guid: 869877f9d334631488ebf99ba7090b97
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 54b7f7ceb5b8f404e9ff2b2af276272b
   m_configObjects: {}
