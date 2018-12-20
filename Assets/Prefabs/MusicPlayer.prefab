@@ -34,8 +34,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523936258537394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.58128, y: -86.525246, z: 86.17667}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1019.5813, y: 453.47476, z: 86.17667}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,7 +53,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.2
-  m_Pitch: 1.1
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -151,3 +151,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 8300000, guid: 6f26dad0eb106834f930acdfc1c5d5eb, type: 3}
   - {fileID: 8300000, guid: 7b1b9855a2e7f8547b1caa23b7827334, type: 3}
+  - {fileID: 8300000, guid: ee2e7d4bcde506342b4c98b25d8ba8ff, type: 3}
+  - {fileID: 8300000, guid: ee2e7d4bcde506342b4c98b25d8ba8ff, type: 3}
+  - {fileID: 8300000, guid: ee2e7d4bcde506342b4c98b25d8ba8ff, type: 3}
+  - {fileID: 8300000, guid: ee2e7d4bcde506342b4c98b25d8ba8ff, type: 3}
+  - {fileID: 8300000, guid: ee2e7d4bcde506342b4c98b25d8ba8ff, type: 3}
+  - {fileID: 8300000, guid: ee2e7d4bcde506342b4c98b25d8ba8ff, type: 3}
+  - {fileID: 8300000, guid: ee2e7d4bcde506342b4c98b25d8ba8ff, type: 3}
+  - {fileID: 8300000, guid: ee2e7d4bcde506342b4c98b25d8ba8ff, type: 3}
+  - {fileID: 8300000, guid: ee2e7d4bcde506342b4c98b25d8ba8ff, type: 3}
+  - {fileID: 8300000, guid: 652af916ff34aa942b785e81328d9b88, type: 3}
+  - {fileID: 8300000, guid: db741e92f2e3eaa479240a1c61801aae, type: 3}

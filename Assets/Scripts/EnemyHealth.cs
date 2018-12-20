@@ -7,6 +7,9 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float deathDelay = 1f;
     [SerializeField] public int scoreForKill = 100;
+    [SerializeField] float highScoreTimer = 5f;
+    [SerializeField] float mediumScoreTimer = 10f;
+    [SerializeField] float lowScoreTimer = 15f;
     float timeAlive;
     public int startingHealth = 100;
     public int currentHealth;
@@ -87,9 +90,9 @@ public class EnemyHealth : MonoBehaviour
     public int ActualScore(int score)
     {
         // jos muutatte kertojia, muuttakaa potentialscore start funktiossa
-        if (timeAlive < 3.5f){ score *= 3; }
-        else if (timeAlive < 6f) { score *= 2; }
-        else if (timeAlive < 10f) { score /= 2; }
+        if (timeAlive < highScoreTimer){ score *= 3; }
+        else if (timeAlive < mediumScoreTimer) { score *= 2; }
+        else if (timeAlive < lowScoreTimer) { score /= 2; }
         return score;
     }
 }

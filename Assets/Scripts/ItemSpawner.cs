@@ -6,27 +6,35 @@ public class ItemSpawner : MonoBehaviour {
 
     [SerializeField] List<GameObject> itemlist;
     [SerializeField] public float spawnDelay = 10f;
+    [SerializeField] public bool isActive = true;
     public float timer = 0f;
     public bool itemSpawned = false;
 
 	// Use this for initialization
 	void Start ()
     {
-        SpawnItem();
+        if (isActive)
+        {
+            SpawnItem();
+        }
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        timer += Time.deltaTime;
-        /*if(gameObject.name == "ItemSpawner")
+        if (isActive)
         {
-            Debug.Log("TIME ALLTIME: " + timer);
-        }*/
-        if (!itemSpawned && (timer >= spawnDelay))
-        {
-            SpawnItem();
+            timer += Time.deltaTime;
+            /*if(gameObject.name == "ItemSpawner")
+            {
+                Debug.Log("TIME ALLTIME: " + timer);
+            }*/
+            if (!itemSpawned && (timer >= spawnDelay))
+            {
+                SpawnItem();
+            }
         }
+        
 	}
 
     public void SpawnItem()

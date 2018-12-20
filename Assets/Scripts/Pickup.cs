@@ -19,6 +19,7 @@ public class Pickup : MonoBehaviour
 
     private void Start()
     {
+
         itemSpawner = GameObject.Find("ItemSpawner").GetComponent<ItemSpawner>();
         powerSpawner = GameObject.Find("PowerSpawner").GetComponent<ItemSpawner>();
 

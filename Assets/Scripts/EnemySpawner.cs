@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour {
 
     [SerializeField] List<Waveconfig> waveconfig;
     int spawnIndex = 0;
+    [SerializeField] float startDelay = 1f;
 
     private void Start()
     {
@@ -15,7 +16,7 @@ public class EnemySpawner : MonoBehaviour {
 
     IEnumerator SpawnWithDelay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(startDelay);
         StartCoroutine(SpawnAllWaves());
     }
 
