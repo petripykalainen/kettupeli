@@ -18,6 +18,8 @@ public class GameStatus : MonoBehaviour {
     public bool levelWon = false;
     public bool levelLost = false;
 
+   
+
     // Use this for initialization
     void Start ()
     {
