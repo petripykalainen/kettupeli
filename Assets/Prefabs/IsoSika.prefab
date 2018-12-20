@@ -1354,7 +1354,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1487,6 +1487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathDelay: 2
   scoreForKill: 100
+  highScoreTimer: 5
+  mediumScoreTimer: 10
+  lowScoreTimer: 15
   startingHealth: 100
   currentHealth: 0
   isDead: 0
