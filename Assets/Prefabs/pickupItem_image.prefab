@@ -44,6 +44,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthEffect: {fileID: 1183446625487678, guid: 01dbbc2fd2e05be439e5ba9f26779a50,
     type: 2}
+  bombSpawn: {fileID: 1847359345211158, guid: 7c00909848fdfe140b138a50720d5206, type: 2}
 --- !u!114 &114424787314823968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77,7 +78,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1460186440179602}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 

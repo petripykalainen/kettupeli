@@ -6,6 +6,57 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/SplashScreen.unity
+    guid: 50f6ea12bcf6e6948a6ba1b3642c4804
+  - enabled: 1
+    path: Assets/Scenes/MenuScene1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene1.unity
+    guid: 2ab30d6b3b8f7234ebdd329205db9d99
+  - enabled: 1
+    path: Assets/Scenes/Arena1.unity
+    guid: 06d27a946f03d864a9fe5a6322de023c
+  - enabled: 1
+    path: Assets/Scenes/Arena2.unity
+    guid: 14fb661a8cb81254da620e8630d3d332
+  - enabled: 1
+    path: Assets/Scenes/level1.unity
+    guid: fee049564ccc1ef40884c6727bb00447
+  - enabled: 0
+    path: Assets/Scenes/Arena3.unity
+    guid: 41603f742fe41154c8a08d7b57eb99fb
+  - enabled: 0
+    path: Assets/Scenes/Arena4.unity
+    guid: 1f9010f92a1de0341b4394d5cef76af3
+  - enabled: 0
+    path: Assets/Scenes/Arena5.unity
+    guid: 85b573c3409b1a84184ff4d1cd046806
+  - enabled: 0
+    path: Assets/Scenes/Arena6.unity
+    guid: 514c6a2a33c863d449df7de4a53e1db1
+  - enabled: 1
+    path: Assets/Scenes/level1.unity
+    guid: fee049564ccc1ef40884c6727bb00447
+  - enabled: 1
+    path: Assets/Scenes/Arena7.unity
+    guid: 0ffccd351a320904da355474a39a1384
+  - enabled: 1
+    path: Assets/Scenes/Arena8.unity
+    guid: bd50bd77a7b559349b426365363529cc
+  - enabled: 1
+    path: Assets/Scenes/Arena10.unity
+    guid: e7f2d67e50f6acd4d8765b2d2a3c55b8
+  - enabled: 1
+    path: Assets/Scenes/Arena11.unity
+    guid: 947b21d5c7aae474e8cd13a6efc57633
+  - enabled: 1
+    path: Assets/Scenes/Arena9.unity
+    guid: 3f9a6565c33dc7942937e675a709ceff
+  - enabled: 1
+    path: Assets/Scenes/GameOverWin.unity
+    guid: a44f7942b98cc9c419e82007ebfea5b7
+  - enabled: 1
+    path: Assets/Scenes/GameOverDeath.unity
+    guid: 869877f9d334631488ebf99ba7090b97
   m_configObjects: {}

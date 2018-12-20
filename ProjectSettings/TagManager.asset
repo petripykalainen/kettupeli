@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Potion_image
+  - Bacon_image
+  - Powerup
+  - Pickup
+  - Bomb_image
   layers:
   - Default
   - TransparentFX

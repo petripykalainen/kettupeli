@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 595aa67590569764da14c00daa7338fe
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: CATLudoHead
+    100002: CATLudoHead_left_Ear
+    100004: CATLudoHead_left_EarBone001
+    100006: CATLudoHead_left_EarBone001Bone001
+    100008: CATLudoHead_nose
+    100010: CATLudoHead_right_Ear
+    100012: CATLudoHead_right_EarBone001
+    100014: CATLudoHead_right_EarBone001Bone001
+    100016: CATLudoLArm11
+    100018: CATLudoLArm12
+    100020: CATLudoLArm21
+    100022: CATLudoLArm22
+    100024: CATLudoLArmCollarbone
+    100026: CATLudoLArmDigit11
+    100028: CATLudoLArmDigit12
+    100030: CATLudoLArmDigit13
+    100032: CATLudoLArmPalm_left
+    100034: CATLudoLLeg11
+    100036: CATLudoLLeg12
+    100038: CATLudoLLeg21
+    100040: CATLudoLLeg22
+    100042: CATLudoLLegAnkle
+    100044: CATLudoLLegToe_left1
+    100046: CATLudoPelvis
+    100048: CATLudoPelvis001
+    100050: CATLudoRArm11
+    100052: CATLudoRArm12
+    100054: CATLudoRArm21
+    100056: CATLudoRArm22
+    100058: CATLudoRArmCollarbone
+    100060: CATLudoRArmDigit11
+    100062: CATLudoRArmDigit12
+    100064: CATLudoRArmDigit13
+    100066: CATLudoRArmPalm_left
+    100068: CATLudoRLeg11
+    100070: CATLudoRLeg12
+    100072: CATLudoRLeg21
+    100074: CATLudoRLeg22
+    100076: CATLudoRLegAnkle
+    100078: CATLudoRLegToe_left1
+    100080: CATLudoSpine1
+    100082: CATLudoSpine1 1
+    100084: CATLudoSpine2
+    100086: CATLudoSpine2 1
+    100088: CATLudoSpine3
+    100090: CATLudoSpine4
+    100092: CATLudoTail1
+    100094: CATLudoTail2
+    100096: CATLudoTail3
+    100098: CATLudoTail4
+    100100: CATLudoTail5
+    100102: //RootNode
+    400000: CATLudoHead
+    400002: CATLudoHead_left_Ear
+    400004: CATLudoHead_left_EarBone001
+    400006: CATLudoHead_left_EarBone001Bone001
+    400008: CATLudoHead_nose
+    400010: CATLudoHead_right_Ear
+    400012: CATLudoHead_right_EarBone001
+    400014: CATLudoHead_right_EarBone001Bone001
+    400016: CATLudoLArm11
+    400018: CATLudoLArm12
+    400020: CATLudoLArm21
+    400022: CATLudoLArm22
+    400024: CATLudoLArmCollarbone
+    400026: CATLudoLArmDigit11
+    400028: CATLudoLArmDigit12
+    400030: CATLudoLArmDigit13
+    400032: CATLudoLArmPalm_left
+    400034: CATLudoLLeg11
+    400036: CATLudoLLeg12
+    400038: CATLudoLLeg21
+    400040: CATLudoLLeg22
+    400042: CATLudoLLegAnkle
+    400044: CATLudoLLegToe_left1
+    400046: CATLudoPelvis
+    400048: CATLudoPelvis001
+    400050: CATLudoRArm11
+    400052: CATLudoRArm12
+    400054: CATLudoRArm21
+    400056: CATLudoRArm22
+    400058: CATLudoRArmCollarbone
+    400060: CATLudoRArmDigit11
+    400062: CATLudoRArmDigit12
+    400064: CATLudoRArmDigit13
+    400066: CATLudoRArmPalm_left
+    400068: CATLudoRLeg11
+    400070: CATLudoRLeg12
+    400072: CATLudoRLeg21
+    400074: CATLudoRLeg22
+    400076: CATLudoRLegAnkle
+    400078: CATLudoRLegToe_left1
+    400080: CATLudoSpine1
+    400082: CATLudoSpine1 1
+    400084: CATLudoSpine2
+    400086: CATLudoSpine2 1
+    400088: CATLudoSpine3
+    400090: CATLudoSpine4
+    400092: CATLudoTail1
+    400094: CATLudoTail2
+    400096: CATLudoTail3
+    400098: CATLudoTail4
+    400100: CATLudoTail5
+    400102: //RootNode
+    7400000: death
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: death
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 18ae22b682fa0db428b6434688924866,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

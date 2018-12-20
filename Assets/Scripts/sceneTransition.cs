@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//TÄMÄ PASKA EI SAA VAIHTUA VITTU
 public class sceneTransition : MonoBehaviour {
 
     public void LoadNextScene()
@@ -28,5 +29,37 @@ public class sceneTransition : MonoBehaviour {
     public void LoadStartScene()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public int GetCurrentScene()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings-1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public bool IsPlayScene()
+    {
+        int secondLastIndex = SceneManager.sceneCountInBuildSettings - 1;
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        //Debug.Log(currentScene);
+        //Debug.Log(currentScene < secondLastIndex && currentScene > 1);
+        return currentScene > 2;
+    }
+
+    public bool IsGameOver()
+    {
+        int secondLastIndex = SceneManager.sceneCountInBuildSettings - 2;
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(currentScene);
+        return currentScene >= secondLastIndex;
     }
 }

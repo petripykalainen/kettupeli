@@ -1,43 +1,98 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] float deathDelay = 1f;
+    [SerializeField] public int scoreForKill = 100;
+    [SerializeField] float highScoreTimer = 5f;
+    [SerializeField] float mediumScoreTimer = 10f;
+    [SerializeField] float lowScoreTimer = 15f;
+    float timeAlive;
     public int startingHealth = 100;
     public int currentHealth;
-    public bool isDead;
+    public bool isDead = false;
+    public bool onFire = false;
+    [SerializeField] AudioClip deathSfx, hitSfx;
+    [SerializeField] List<AudioClip> meleeSfx;
+    AudioSource audioPlayer;
+    public GameObject bacon;
 
-    // CapsuleCollider capsuleCollider;
-
+    Animator anim;
 
     void Start()
     {
-        // capsuleCollider = GetComponent<CapsuleCollider>();
+        FindObjectOfType<ScoreCounter>().potentialScore += scoreForKill * 3;
+        timeAlive = 0f;
+        audioPlayer = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
         currentHealth = startingHealth;
     }
-
-    void Update()
+    private void Update()
     {
-
+        if (transform.position.y < -20 && !isDead)
+        {
+            TakeDamage(startingHealth);
+        }
+        timeAlive += Time.deltaTime;
     }
-
 
     public void TakeDamage(int amount)
     {
         if (isDead)
             return;
         currentHealth -= amount;
-        if (currentHealth <= 0)
+        anim.SetTrigger("Hit");
+        audioPlayer.PlayOneShot(hitSfx);
+        if (currentHealth < 0)
         {
             Death();
         }
     }
 
 
-    void Death()
+
+    public void Death()
     {
-        // TODO: Death animation, or at least stop the enemy from chasing the player.
+        FindObjectOfType<ScoreCounter>().score += ActualScore(scoreForKill);
+        FindObjectOfType<ScoreCounter>().totalScore += ActualScore(scoreForKill);
+        FindObjectOfType<GameStatus>().ReduceEnemyCount();
         isDead = true;
-        Debug.Log("You have slaughtered the enemy!");
-        // capsuleCollider.isTrigger = true;    
+        audioPlayer.PlayOneShot(deathSfx);
+        anim.SetBool("IsDead", isDead);
+        StartCoroutine(RemoveBody());
+    }
+
+    IEnumerator RemoveBody()
+    {
+        anim.SetTrigger("Die");
+        deathDelay = deathDelay + anim.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        //Debug.Log(anim.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+        //Debug.Log("Removing body in " + deathDelay + " seconds");
+        yield return new WaitForSeconds(deathDelay);
+        //Debug.Log("Removing body");
+        if (bacon != null)
+        {
+            Instantiate(bacon, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
+    }
+
+    public void PlayMeleeSound(List<AudioClip> sounds)
+    {
+        int index = UnityEngine.Random.Range(0, sounds.Count - 1);
+        Debug.Log(sounds[index]);
+        audioPlayer.PlayOneShot(sounds[index]);
+    }
+
+    public int ActualScore(int score)
+    {
+        // jos muutatte kertojia, muuttakaa potentialscore start funktiossa
+        if (timeAlive < highScoreTimer){ score *= 3; }
+        else if (timeAlive < mediumScoreTimer) { score *= 2; }
+        else if (timeAlive < lowScoreTimer) { score /= 2; }
+        return score;
     }
 }
