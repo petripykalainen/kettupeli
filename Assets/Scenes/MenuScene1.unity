@@ -155,7 +155,7 @@ Prefab:
     - target: {fileID: 82651048429442300, guid: e6d42152ed61ad6458a46700f9894a16,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224437931106173950, guid: e6d42152ed61ad6458a46700f9894a16,
         type: 2}
@@ -214,22 +214,22 @@ Prefab:
     - target: {fileID: 224599341984037178, guid: e6d42152ed61ad6458a46700f9894a16,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224599341984037178, guid: e6d42152ed61ad6458a46700f9894a16,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224599341984037178, guid: e6d42152ed61ad6458a46700f9894a16,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 496.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224599341984037178, guid: e6d42152ed61ad6458a46700f9894a16,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -276.88998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224824409456179446, guid: e6d42152ed61ad6458a46700f9894a16,
         type: 2}
@@ -293,7 +293,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1069244475868534, guid: e6d42152ed61ad6458a46700f9894a16, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114588568649200258, guid: e6d42152ed61ad6458a46700f9894a16,
         type: 2}
@@ -315,6 +315,58 @@ Prefab:
         Inventory :: Numbers 1-5
 
         Pickups will boost your fighting capabilities!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 224625380192684526, guid: e6d42152ed61ad6458a46700f9894a16,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 224625380192684526, guid: e6d42152ed61ad6458a46700f9894a16,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 224625380192684526, guid: e6d42152ed61ad6458a46700f9894a16,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1742866691012510, guid: e6d42152ed61ad6458a46700f9894a16, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224478810476377330, guid: e6d42152ed61ad6458a46700f9894a16,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105954566477774, guid: e6d42152ed61ad6458a46700f9894a16, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 198570227840001984, guid: e6d42152ed61ad6458a46700f9894a16,
+        type: 2}
+      propertyPath: lengthInSec
+      value: 3.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 198570227840001984, guid: e6d42152ed61ad6458a46700f9894a16,
+        type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 5.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 199022750566639730, guid: e6d42152ed61ad6458a46700f9894a16,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199022750566639730, guid: e6d42152ed61ad6458a46700f9894a16,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021455636429418, guid: e6d42152ed61ad6458a46700f9894a16, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d42152ed61ad6458a46700f9894a16, type: 2}
