@@ -39,6 +39,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Arena8.unity
     guid: bd50bd77a7b559349b426365363529cc
   - enabled: 1
+    path: Assets/Scenes/Arena10.unity
+    guid: e7f2d67e50f6acd4d8765b2d2a3c55b8
+  - enabled: 1
+    path: Assets/Scenes/Arena11.unity
+    guid: 947b21d5c7aae474e8cd13a6efc57633
+  - enabled: 1
     path: Assets/Scenes/Arena9.unity
     guid: 3f9a6565c33dc7942937e675a709ceff
   - enabled: 1
