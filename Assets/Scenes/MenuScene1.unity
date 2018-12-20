@@ -305,6 +305,17 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -660
       objectReference: {fileID: 0}
+    - target: {fileID: 114117263117770214, guid: e6d42152ed61ad6458a46700f9894a16,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Move :: Arrow keys
+
+        Attack :: Space
+
+        Inventory :: Numbers 1-5
+
+        Pickups will boost your fighting capabilities!'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d42152ed61ad6458a46700f9894a16, type: 2}
   m_IsPrefabAsset: 0
