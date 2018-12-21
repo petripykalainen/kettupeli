@@ -20,6 +20,7 @@ public class EndScreenText : MonoBehaviour {
         {
             finalText.text = "CONGRATULATIONS \n YOU WON THE GAME\n FINALSCORE \n" + FindObjectOfType<ScoreCounter>().totalScore;
         }
+        FindObjectOfType<ScoreCounter>().totalScore = 0;
     }
 	
 }
