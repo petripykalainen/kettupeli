@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arena2.unity
     guid: 14fb661a8cb81254da620e8630d3d332
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/level1.unity
     guid: fee049564ccc1ef40884c6727bb00447
   - enabled: 0

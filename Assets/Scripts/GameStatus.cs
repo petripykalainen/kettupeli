@@ -36,14 +36,14 @@ public class GameStatus : MonoBehaviour {
             CountEnemies(listOfEnemies);
             //FindObjectOfType<ScoreCounter>().ResetScore();
         }
-        if (sceneChanger.GetCurrentScene() == 2)
+        if (sceneChanger.GetCurrentScene() == 3)
         {
             FindObjectOfType<ScoreCounter>().ResetTotalScore();
         }
 
         if (sceneChanger.IsGameOver())
         {
-            Debug.Log("This should print in last scenes");
+            //Debug.Log("This should print in last scenes");
             FinalResult();
         }
         
